@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string>
+#include <iostream>
 
 class GameObject {
 
@@ -17,10 +18,10 @@ class GameObject {
 		virtual void onCollision(std::string tag);
 		int xpos;
 		int ypos;
+		SDL_Rect srcRect, destRect;
 		std::string GetTag();
 	protected:
 		SDL_Texture* objTexture;
-		SDL_Rect srcRect, destRect;
 		SDL_Renderer* renderer;
 		std::string tag = "GameObject";
 		

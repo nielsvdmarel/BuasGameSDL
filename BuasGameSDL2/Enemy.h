@@ -9,12 +9,9 @@ public:
 	float scale;
 	void Update() override;
 	void Render() override;
-	void onCollision(std::string tag);
+	void onCollision(std::string otherTag);
 	int velocity;
 	float speed = 4;
-	int EnemyXpos;
-	int EnemyYpos;
-	std::string tag  = "Enemy";
 private:
 
 };

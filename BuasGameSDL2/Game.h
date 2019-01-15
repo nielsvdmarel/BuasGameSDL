@@ -12,6 +12,7 @@
 #include <time.h>
 #include "System.h"
 #include "EnemyManager.h"
+#include "Physics.h"
 
 class Game {
 
@@ -29,7 +30,7 @@ public:
 	Map* map;
 	int DirectionX;
 	int DirectionY;
-	
+	Collision* collission;
 
 private:
 	int cnt = 0;

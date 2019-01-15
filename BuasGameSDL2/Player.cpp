@@ -7,6 +7,7 @@ Player::Player(GameObject gameObject, Input & i) : GameObject(gameObject), input
 	checkposy = ypos;
 	speedx = 0;
 	speedy = 0;
+	tag = "Player";
 }
 
 Player::~Player()
@@ -67,14 +68,10 @@ void Player::Render() {
 	SDL_RenderCopy(renderer, objTexture, &srcRect, &destRect);
 }
 
-void Player::onCollision(std::string tag)
+void Player::onCollision(std::string otherTag)
 {
-	if (tag == "Player") {
-		//player behaviour
-	}
-
-	if (tag == "Enemy") {
-		//enemy behaviour
+	if (otherTag == "Enemy") {
+		std::cout << "PLAYER TOUCHED A ENEMY" << std::endl;
 	}
 }
 

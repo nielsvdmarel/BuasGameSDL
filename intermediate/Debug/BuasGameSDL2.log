@@ -1,11 +1,12 @@
 ﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(376,5): warning MSB8004: Intermediate Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Intermediate Directory.
+  Physics.cpp
   BuasGameSDL2.vcxproj -> D:\cppProjectsGit\BuasGameSDL\Debug\BuasGameSDL2.exe
   
   -------------------------------------------------------------------------------
      ROBOCOPY     ::     Robust File Copy for Windows                              
   -------------------------------------------------------------------------------
   
-    Started : Tuesday, January 15, 2019 2:24:47 PM
+    Started : Tuesday, January 15, 2019 5:39:12 PM
      Source : D:\cppProjectsGit\BuasGameSDL\BuasGameSDL2\Assets\
        Dest : D:\cppProjectsGit\BuasGameSDL\Debug\Assets\
   
@@ -15,193 +16,27 @@
   
   ------------------------------------------------------------------------------
   
-  	  New Dir         20	D:\cppProjectsGit\BuasGameSDL\BuasGameSDL2\Assets\
-  	    New File  		    7613	1.png
-    0%  
-  100%  
-  	    New File  		    6444	2.png
-    0%  
-  100%  
-  	    New File  		    6091	3.png
-    0%  
-  100%  
-  	    New File  		    6060	4.png
-    0%  
-  100%  
-  	    New File  		    5711	Ice.png
-    0%  
-  100%  
-  	    New File  		    6678	IceToSnow.png
-    0%  
-  100%  
-  	    New File  		    7404	IceToWater.png
-    0%  
-  100%  
-  	    New File  		    2587	Map.txt
-    0%  
-  100%  
-  	    New File  		    4303	p1.png
-    0%  
-  100%  
-  	    New File  		    4204	p2.png
-    0%  
-  100%  
-  	    New File  		    4180	p21.png
-    0%  
-  100%  
-  	    New File  		    3923	p21B.png
-    0%  
-  100%  
-  	    New File  		    4105	p22.png
-    0%  
-  100%  
-  	    New File  		    3842	p22B.png
-    0%  
-  100%  
-  	    New File  		    4148	p23.png
-    0%  
-  100%  
-  	    New File  		    3922	p23B.png
-    0%  
-  100%  
-  	    New File  		    4310	p3.png
-    0%  
-  100%  
-  	    New File  		    2869	Snow.png
-    0%  
-  100%  
-  	    New File  		   95107	SpriteSheetTerain.png
-    0%  
-  100%  
-  	    New File  		    6445	Water.png
-    0%  
-  100%  
-  	  New Dir         11	D:\cppProjectsGit\BuasGameSDL\BuasGameSDL2\Assets\IceToSnow\
-  	    New File  		    3045	DownDownCorner.png
-    0%  
-  100%  
-  	    New File  		    3051	IceToSnowDownCorner.png
-    0%  
-  100%  
-  	    New File  		    7192	IceToSnowLCD.png
-    0%  
-  100%  
-  	    New File  		    6955	IceToSnowLCU.png
-    0%  
-  100%  
-  	    New File  		    5834	IceToSnowLMM.png
-    0%  
-  100%  
-  	    New File  		    6677	IceToSnowMMD.png
-    0%  
-  100%  
-  	    New File  		    5161	IceToSnowMMU.png
-    0%  
-  100%  
-  	    New File  		    7583	IceToSnowRCD.png
-    0%  
-  100%  
-  	    New File  		    6796	IceToSnowRCU.png
-    0%  
-  100%  
-  	    New File  		    5683	IceToSnowRMM.png
-    0%  
-  100%  
-  	    New File  		    3030	IceToSnowUpCorner.png
-    0%  
-  100%  
-  	  New Dir         12	D:\cppProjectsGit\BuasGameSDL\BuasGameSDL2\Assets\IceToWater\
-  	    New File  		    3177	IceWaterCornerDown.png
-    0%  
-  100%  
-  	    New File  		    3165	IceWaterCornerUp.png
-    0%  
-  100%  
-  	    New File  		    3165	IceWaterCRD.png
-    0%  
-  100%  
-  	    New File  		    3173	IceWaterCRt.png
-    0%  
-  100%  
-  	    New File  		    6838	IceWaterLCD.png
-    0%  
-  100%  
-  	    New File  		    7663	IceWaterLCU.png
-    0%  
-  100%  
-  	    New File  		    7172	IceWaterLML.png
-    0%  
-  100%  
-  	    New File  		    6891	IceWaterMMD.png
-    0%  
-  100%  
-  	    New File  		    7404	IceWaterMMU.png
-    0%  
-  100%  
-  	    New File  		    7559	IceWaterRCD.png
-    0%  
-  100%  
-  	    New File  		    7116	IceWaterRCU.png
-    0%  
-  100%  
-  	    New File  		    7105	IceWaterRMR.png
-    0%  
-  100%  
-  	  New Dir          3	D:\cppProjectsGit\BuasGameSDL\BuasGameSDL2\Assets\MainTiles\
-  	    New File  		    3668	ICE.png
-    0%  
-  100%  
-  	    New File  		    2869	Snow.png
-    0%  
-  100%  
-  	    New File  		    6444	Water.png
-    0%  
-  100%  
-  	  New Dir          8	D:\cppProjectsGit\BuasGameSDL\BuasGameSDL2\Assets\SnowToIce\
-  	    New File  		    4880	SnowToIceLCD.png
-    0%  
-  100%  
-  	    New File  		    6240	SnowToIceLCU.png
-    0%  
-  100%  
-  	    New File  		    4882	SnowToIceLMM.png
-    0%  
-  100%  
-  	    New File  		    4978	SnowToIceMMD.png
-    0%  
-  100%  
-  	    New File  		    5712	SnowToIceMMU.png
-    0%  
-  100%  
-  	    New File  		    5741	SnowToIceRCD.png
-    0%  
-  100%  
-  	    New File  		    6227	SnowToIceRCU.png
-    0%  
-  100%  
-  	    New File  		    5075	SnowToIceRMM.png
-    0%  
-  100%  
+  	                  20	D:\cppProjectsGit\BuasGameSDL\BuasGameSDL2\Assets\
+  	                  11	D:\cppProjectsGit\BuasGameSDL\BuasGameSDL2\Assets\IceToSnow\
+  	                  12	D:\cppProjectsGit\BuasGameSDL\BuasGameSDL2\Assets\IceToWater\
+  	                   3	D:\cppProjectsGit\BuasGameSDL\BuasGameSDL2\Assets\MainTiles\
+  	                   8	D:\cppProjectsGit\BuasGameSDL\BuasGameSDL2\Assets\SnowToIce\
   
   ------------------------------------------------------------------------------
   
                  Total    Copied   Skipped  Mismatch    FAILED    Extras
-      Dirs :         5         5         0         0         0         0
-     Files :        54        54         0         0         0         0
-     Bytes :   369.2 k   369.2 k         0         0         0         0
+      Dirs :         5         0         5         0         0         0
+     Files :        54         0        54         0         0         0
+     Bytes :   369.2 k         0   369.2 k         0         0         0
      Times :   0:00:00   0:00:00                       0:00:00   0:00:00
-  
-  
-     Speed :             7413666 Bytes/sec.
-     Speed :             424.213 MegaBytes/min.
-     Ended : Tuesday, January 15, 2019 2:24:47 PM
+     Ended : Tuesday, January 15, 2019 5:39:12 PM
   
   
   -------------------------------------------------------------------------------
      ROBOCOPY     ::     Robust File Copy for Windows                              
   -------------------------------------------------------------------------------
   
-    Started : Tuesday, January 15, 2019 2:24:47 PM
+    Started : Tuesday, January 15, 2019 5:39:12 PM
      Source : D:\cppProjectsGit\BuasGameSDL\BuasGameSDL2\dlls\
        Dest : D:\cppProjectsGit\BuasGameSDL\Debug\
   
@@ -213,37 +48,16 @@
   
   	                   4	D:\cppProjectsGit\BuasGameSDL\BuasGameSDL2\dlls\
   	*EXTRA Dir        -1	D:\cppProjectsGit\BuasGameSDL\Debug\Assets\
-  	  *EXTRA File 		  221696	BuasGameSDL2.exe
-  	  *EXTRA File 		   1.0 m	BuasGameSDL2.ilk
-  	  *EXTRA File 		   1.2 m	BuasGameSDL2.pdb
-  	    New File  		  202752	libpng16-16.dll
-    0%  
-   64%  
-  100%  
-  	    New File  		   1.0 m	SDL2.dll
-    0%  
-   24%  
-   48%  
-   72%  
-   96%  
-  100%  
-  	    New File  		  116736	SDL2_image.dll
-    0%  
-  100%  
-  	    New File  		  103424	zlib1.dll
-    0%  
-  100%  
+  	  *EXTRA File 		  222208	BuasGameSDL2.exe
+  	  *EXTRA File 		   1.5 m	BuasGameSDL2.ilk
+  	  *EXTRA File 		   1.7 m	BuasGameSDL2.pdb
   
   ------------------------------------------------------------------------------
   
                  Total    Copied   Skipped  Mismatch    FAILED    Extras
       Dirs :         1         0         1         0         0         1
-     Files :         4         4         0         0         0         3
-     Bytes :    1.44 m    1.44 m         0         0         0    2.46 m
+     Files :         4         0         4         0         0         3
+     Bytes :    1.44 m         0    1.44 m         0         0    3.54 m
      Times :   0:00:00   0:00:00                       0:00:00   0:00:00
-  
-  
-     Speed :           377728000 Bytes/sec.
-     Speed :           21613.769 MegaBytes/min.
-     Ended : Tuesday, January 15, 2019 2:24:47 PM
+     Ended : Tuesday, January 15, 2019 5:39:12 PM
   

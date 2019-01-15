@@ -16,8 +16,21 @@ void Collision::update()
 	{
 		for (unsigned int j = i + 1; j < objects.size(); j++)
 		{
-			objects[i]->onCollision(objects[j]->GetTag());
-			objects[j]->onCollision(objects[i]->GetTag()); 
+			int hwi = objects[i]->destRect.w / 2;
+			int hwj = objects[j]->destRect.w / 2;
+			int hhi = objects[i]->destRect.h / 2;
+			int hhj = objects[j]->destRect.h / 2;
+			int absoluteDifx = abs((objects[i]->xpos + hwi) - (objects[j]->xpos + hhi));
+			int abosluteDify = abs((objects[i]->ypos + hhi) - (objects[j]->ypos + hhj));
+			if (absoluteDifx <  hwi + hwj)
+			{
+				if (abosluteDify < hhi + hhj)
+				{
+					//collision
+					objects[i]->onCollision(objects[j]->GetTag());
+					objects[j]->onCollision(objects[i]->GetTag());
+				}
+			}
 		}
 	}
 }

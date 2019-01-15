@@ -10,10 +10,9 @@ EnemyManager::~EnemyManager()
 
 }
 
-void EnemyManager::Update()
-{
+void EnemyManager::Update() {
 	timePassed++;
-	if (timePassed >= 5) {
+	if (timePassed >= 50) {
 		timePassed = 0;
 		AddGameObjectToObjects(new Enemy(GameObject("Assets/p22B.png", renderer, 2000, 500)));
 	}
