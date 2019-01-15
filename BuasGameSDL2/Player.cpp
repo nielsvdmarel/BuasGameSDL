@@ -91,7 +91,7 @@ void Player::checkDirectionx()
 			DirectionX = 0;
 		}
 		checkposx = xpos;
-		std::cout << DirectionX << std::endl;
+		//std::cout << DirectionX << std::endl;
 }
 
 void Player::checkDirectiony()
@@ -107,7 +107,7 @@ void Player::checkDirectiony()
 			DirectionY = 0;
 		}
 		checkposy = ypos;
-		std::cout << DirectionY << std::endl;
+		//std::cout << DirectionY << std::endl;
 	
 }
 

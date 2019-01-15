@@ -1,7 +1,12 @@
 #include "Game.h"
+#include "windows.h"
 
 int main(int argc, char* argv[])
 {
+	char result[256];
+	int bytes = GetModuleFileName(NULL, result, 256);
+	std::cout << result << "\n";
+
 	const int FPS = 60;
 	const int frameDelay = 1000 / FPS;
 
