@@ -36,7 +36,7 @@ void GameObject::ProccesInput(int keyCode, bool down)
 
 }
 
-void GameObject::onCollision(std::string tag)
+void GameObject::onCollision(std::string tag, GameObject* other)
 {
 
 }

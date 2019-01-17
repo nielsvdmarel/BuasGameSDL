@@ -14,13 +14,19 @@ void EnemyManager::Update() {
 	timePassed++;
 	if (timePassed >= 50) {
 		timePassed = 0;
-		AddGameObjectToObjects(new Enemy(GameObject("Assets/p22B.png", renderer, 2000, 500)));
+		for (unsigned int i = 0; i < 10; i++)
+		{
+			Enemy * enemy = new Enemy(GameObject("Assets/p22B.png", renderer, 2000, 0));
+			enemy->SetEnemyPosScale(i);
+			AddGameObjectToObjects(enemy);
+		}
 	}
 }
 
 void EnemyManager::AddGameObjectToObjects(GameObject* gameObject)
 {
 	objects.push_back(gameObject);
+	//std::cout << objects.size() << std::endl;
 }
 
 void EnemyManager::SpawnEnemyAtRandomYPos()

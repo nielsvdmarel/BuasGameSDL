@@ -6,7 +6,7 @@
      ROBOCOPY     ::     Robust File Copy for Windows                              
   -------------------------------------------------------------------------------
   
-    Started : Tuesday, January 15, 2019 5:39:12 PM
+    Started : Thursday, January 17, 2019 5:23:41 PM
      Source : D:\cppProjectsGit\BuasGameSDL\BuasGameSDL2\Assets\
        Dest : D:\cppProjectsGit\BuasGameSDL\Debug\Assets\
   
@@ -29,14 +29,14 @@
      Files :        54         0        54         0         0         0
      Bytes :   369.2 k         0   369.2 k         0         0         0
      Times :   0:00:00   0:00:00                       0:00:00   0:00:00
-     Ended : Tuesday, January 15, 2019 5:39:12 PM
+     Ended : Thursday, January 17, 2019 5:23:41 PM
   
   
   -------------------------------------------------------------------------------
      ROBOCOPY     ::     Robust File Copy for Windows                              
   -------------------------------------------------------------------------------
   
-    Started : Tuesday, January 15, 2019 5:39:12 PM
+    Started : Thursday, January 17, 2019 5:23:41 PM
      Source : D:\cppProjectsGit\BuasGameSDL\BuasGameSDL2\dlls\
        Dest : D:\cppProjectsGit\BuasGameSDL\Debug\
   
@@ -49,15 +49,15 @@
   	                   4	D:\cppProjectsGit\BuasGameSDL\BuasGameSDL2\dlls\
   	*EXTRA Dir        -1	D:\cppProjectsGit\BuasGameSDL\Debug\Assets\
   	  *EXTRA File 		  222208	BuasGameSDL2.exe
-  	  *EXTRA File 		   1.5 m	BuasGameSDL2.ilk
-  	  *EXTRA File 		   1.7 m	BuasGameSDL2.pdb
+  	  *EXTRA File 		   1.1 m	BuasGameSDL2.ilk
+  	  *EXTRA File 		   1.5 m	BuasGameSDL2.pdb
   
   ------------------------------------------------------------------------------
   
                  Total    Copied   Skipped  Mismatch    FAILED    Extras
       Dirs :         1         0         1         0         0         1
      Files :         4         0         4         0         0         3
-     Bytes :    1.44 m         0    1.44 m         0         0    3.54 m
+     Bytes :    1.44 m         0    1.44 m         0         0    2.86 m
      Times :   0:00:00   0:00:00                       0:00:00   0:00:00
-     Ended : Tuesday, January 15, 2019 5:39:12 PM
+     Ended : Thursday, January 17, 2019 5:23:41 PM
   

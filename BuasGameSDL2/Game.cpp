@@ -32,7 +32,7 @@ void Game::init(const char *title, int xpos, int ypos, int width, int height, bo
 	map = new Map(renderer);
 	map->ParseMap("Assets/Map.txt");
 	enemyManager = new EnemyManager(renderer, allGameObjects);
-	allGameObjects.push_back(new Enemy(GameObject("Assets/p22B.png", renderer, 1000, 500)));
+	//allGameObjects.push_back(new Enemy(GameObject("Assets/p22B.png", renderer, 1000, 500)));
 	allGameObjects.push_back(new Player( GameObject("Assets/p21.png", renderer, 0 , 0), input));
 	collission = new Collision(allGameObjects);
 }
@@ -63,7 +63,7 @@ void Game::update() {
 			input.setKeyUp(event.key.keysym.scancode);
 			break;
 		}
-		//enemyManager->Update();
+		enemyManager->Update();
 		collission->update();
 }
 
@@ -81,7 +81,7 @@ void Game::clean() {
 	SDL_DestroyWindow(window);
 	SDL_DestroyRenderer(renderer);
 	SDL_Quit();
-	std::cout << "Game Cleared" << std::endl;
+	//std::cout << "Game Cleared" << std::endl;
 }
 
 

@@ -15,7 +15,7 @@ class GameObject {
 	 	virtual void Update();
 		virtual void Render();
 		virtual void ProccesInput(int keyCode, bool down);
-		virtual void onCollision(std::string tag);
+		virtual void onCollision(std::string tag, GameObject* other);
 		int xpos;
 		int ypos;
 		SDL_Rect srcRect, destRect;

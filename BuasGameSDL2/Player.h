@@ -11,7 +11,7 @@ public:
 	float scale = 2;
 	void Update();
 	void Render();
-	void onCollision(std::string otherTag);
+	void onCollision(std::string otherTag, GameObject* other);
 	void checkDirectionx();
 	void checkDirectiony();
 	int DirectionY;

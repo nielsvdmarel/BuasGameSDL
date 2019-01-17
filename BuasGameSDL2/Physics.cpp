@@ -12,23 +12,26 @@ Collision::~Collision()
 
 void Collision::update()
 {
+
 	for (unsigned int i = 0; i < objects.size(); i++)
 	{
 		for (unsigned int j = i + 1; j < objects.size(); j++)
 		{
-			int hwi = objects[i]->destRect.w / 2;
-			int hwj = objects[j]->destRect.w / 2;
-			int hhi = objects[i]->destRect.h / 2;
-			int hhj = objects[j]->destRect.h / 2;
-			int absoluteDifx = abs((objects[i]->xpos + hwi) - (objects[j]->xpos + hhi));
-			int abosluteDify = abs((objects[i]->ypos + hhi) - (objects[j]->ypos + hhj));
-			if (absoluteDifx <  hwi + hwj)
-			{
-				if (abosluteDify < hhi + hhj)
+			if (std::abs(objects[i]->xpos - objects[j]->xpos) < 10) { // need to test this, value must be checked to determene the needed collision length
+				int hwi = objects[i]->destRect.w / 2;
+				int hwj = objects[j]->destRect.w / 2;
+				int hhi = objects[i]->destRect.h / 2;
+				int hhj = objects[j]->destRect.h / 2;
+				int absoluteDifx = abs((objects[i]->xpos + hwi) - (objects[j]->xpos + hhi));
+				int abosluteDify = abs((objects[i]->ypos + hhi) - (objects[j]->ypos + hhj));
+				if (absoluteDifx < hwi + hwj)
 				{
-					//collision
-					objects[i]->onCollision(objects[j]->GetTag());
-					objects[j]->onCollision(objects[i]->GetTag());
+					if (abosluteDify < hhi + hhj)
+					{
+						//collision
+						objects[i]->onCollision(objects[j]->GetTag(), objects[j]);
+						objects[j]->onCollision(objects[i]->GetTag(), objects[i]);
+					}
 				}
 			}
 		}

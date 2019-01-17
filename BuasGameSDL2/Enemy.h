@@ -9,7 +9,8 @@ public:
 	float scale;
 	void Update() override;
 	void Render() override;
-	void onCollision(std::string otherTag);
+	void onCollision(std::string otherTag, GameObject* other);
+	void SetEnemyPosScale(int beginYPos);
 	int velocity;
 	float speed = 4;
 private:

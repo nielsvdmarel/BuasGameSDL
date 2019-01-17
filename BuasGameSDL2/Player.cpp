@@ -68,10 +68,16 @@ void Player::Render() {
 	SDL_RenderCopy(renderer, objTexture, &srcRect, &destRect);
 }
 
-void Player::onCollision(std::string otherTag)
+void Player::onCollision(std::string otherTag, GameObject* other)
 {
 	if (otherTag == "Enemy") {
-		std::cout << "PLAYER TOUCHED A ENEMY" << std::endl;
+		//other->ypos += speedy * 2;
+		//other->xpos += speedx * 2;
+		//std::cout << "PLAYER TOUCHED A ENEMY" << std::endl;
+	} else if (otherTag == "Wall") {
+
+	} else if (otherTag == "border") {
+
 	}
 }
 
