@@ -11,15 +11,35 @@ EnemyManager::~EnemyManager()
 }
 
 void EnemyManager::Update() {
+	if (objects.size() < 250) {
 	timePassed++;
-	if (timePassed >= 50) {
+	if (timePassed >= 20) {
 		timePassed = 0;
 		for (unsigned int i = 0; i < 10; i++)
 		{
-			Enemy * enemy = new Enemy(GameObject("Assets/p22B.png", renderer, 2000, 0));
-			enemy->SetEnemyPosScale(i);
-			AddGameObjectToObjects(enemy);
+			int Random = rand() % 3 + 1;
+			if (Random == 1 || Random == 2) {
+				
+			}
+			// wat een tering bende
+			if (Random == 3) {
+				Enemy * enemy = new Enemy(GameObject("Assets/penguinsBad.png", renderer, 2000, 0));
+				enemy->SetEnemyPosScale(i);
+				AddGameObjectToObjects(enemy);
+				int Random = rand() % 3 + 1;
+				if (Random == 1 || Random == 2) {
+					enemy->speed = 3;
+				}
+				if (Random == 3) {
+					enemy->speed = 2;
+				}
+				int Random2= rand() % 6 + 1;
+				if (Random2 == 4) {
+					enemy->scale = 3;
+				}
+			}
 		}
+	}
 	}
 }
 

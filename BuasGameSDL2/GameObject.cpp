@@ -5,6 +5,13 @@ GameObject::GameObject(const char* textureSheet, SDL_Renderer* ren , int x, int 
 	objTexture = TextureManager::LoadTexture(textureSheet, ren);
 	xpos = x;
 	ypos = y;
+
+
+	//dit zat in de update
+	srcRect.w = 33;
+	srcRect.h = 32;
+	srcRect.x = 0;
+	srcRect.y = 0;
 }
 
 GameObject::~GameObject()
@@ -16,10 +23,6 @@ void GameObject::Update() {
 
 	xpos++;
 	ypos++;
-	srcRect.h = 33;
-	srcRect.w = 32;
-	srcRect.x = 0;
-	srcRect.y = 0;
 
 	destRect.x = xpos;
 	destRect.y = ypos;
@@ -41,6 +44,10 @@ void GameObject::onCollision(std::string tag, GameObject* other)
 
 }
 
+void GameObject::AnimateFrame(int anim)
+{
+
+}
 
 std::string GameObject::GetTag()
 {

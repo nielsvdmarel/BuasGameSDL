@@ -1,14 +1,16 @@
-﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(376,5): warning MSB8004: Intermediate Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Intermediate Directory.
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(372,5): warning MSB8004: Intermediate Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Intermediate Directory.
   Physics.cpp
-  BuasGameSDL2.vcxproj -> D:\cppProjectsGit\BuasGameSDL\Debug\BuasGameSDL2.exe
+  EnemyManager.cpp
+  Generating Code...
+  BuasGameSDL2.vcxproj -> D:\cppGit\BuasGameSDL\Debug\BuasGameSDL2.exe
   
   -------------------------------------------------------------------------------
      ROBOCOPY     ::     Robust File Copy for Windows                              
   -------------------------------------------------------------------------------
   
-    Started : Thursday, January 17, 2019 5:23:41 PM
-     Source : D:\cppProjectsGit\BuasGameSDL\BuasGameSDL2\Assets\
-       Dest : D:\cppProjectsGit\BuasGameSDL\Debug\Assets\
+    Started : Monday, 21 January 2019 00:53:07
+     Source : D:\cppGit\BuasGameSDL\BuasGameSDL2\Assets\
+       Dest : D:\cppGit\BuasGameSDL\Debug\Assets\
   
       Files : *.*
   	    
@@ -16,29 +18,30 @@
   
   ------------------------------------------------------------------------------
   
-  	                  20	D:\cppProjectsGit\BuasGameSDL\BuasGameSDL2\Assets\
-  	                  11	D:\cppProjectsGit\BuasGameSDL\BuasGameSDL2\Assets\IceToSnow\
-  	                  12	D:\cppProjectsGit\BuasGameSDL\BuasGameSDL2\Assets\IceToWater\
-  	                   3	D:\cppProjectsGit\BuasGameSDL\BuasGameSDL2\Assets\MainTiles\
-  	                   8	D:\cppProjectsGit\BuasGameSDL\BuasGameSDL2\Assets\SnowToIce\
+  	                  23	D:\cppGit\BuasGameSDL\BuasGameSDL2\Assets\
+  	  *EXTRA File 		    4325	PenguinSpriteSheetP.png
+  	                  11	D:\cppGit\BuasGameSDL\BuasGameSDL2\Assets\IceToSnow\
+  	                  12	D:\cppGit\BuasGameSDL\BuasGameSDL2\Assets\IceToWater\
+  	                   3	D:\cppGit\BuasGameSDL\BuasGameSDL2\Assets\MainTiles\
+  	                   8	D:\cppGit\BuasGameSDL\BuasGameSDL2\Assets\SnowToIce\
   
   ------------------------------------------------------------------------------
   
                  Total    Copied   Skipped  Mismatch    FAILED    Extras
       Dirs :         5         0         5         0         0         0
-     Files :        54         0        54         0         0         0
-     Bytes :   369.2 k         0   369.2 k         0         0         0
+     Files :        57         0        57         0         0         1
+     Bytes :   398.8 k         0   398.8 k         0         0     4.2 k
      Times :   0:00:00   0:00:00                       0:00:00   0:00:00
-     Ended : Thursday, January 17, 2019 5:23:41 PM
+     Ended : Monday, 21 January 2019 00:53:07
   
   
   -------------------------------------------------------------------------------
      ROBOCOPY     ::     Robust File Copy for Windows                              
   -------------------------------------------------------------------------------
   
-    Started : Thursday, January 17, 2019 5:23:41 PM
-     Source : D:\cppProjectsGit\BuasGameSDL\BuasGameSDL2\dlls\
-       Dest : D:\cppProjectsGit\BuasGameSDL\Debug\
+    Started : Monday, 21 January 2019 00:53:07
+     Source : D:\cppGit\BuasGameSDL\BuasGameSDL2\dlls\
+       Dest : D:\cppGit\BuasGameSDL\Debug\
   
       Files : *.*
   	    
@@ -46,18 +49,18 @@
   
   ------------------------------------------------------------------------------
   
-  	                   4	D:\cppProjectsGit\BuasGameSDL\BuasGameSDL2\dlls\
-  	*EXTRA Dir        -1	D:\cppProjectsGit\BuasGameSDL\Debug\Assets\
-  	  *EXTRA File 		  222208	BuasGameSDL2.exe
-  	  *EXTRA File 		   1.1 m	BuasGameSDL2.ilk
-  	  *EXTRA File 		   1.5 m	BuasGameSDL2.pdb
+  	                   6	D:\cppGit\BuasGameSDL\BuasGameSDL2\dlls\
+  	*EXTRA Dir        -1	D:\cppGit\BuasGameSDL\Debug\Assets\
+  	  *EXTRA File 		  183296	BuasGameSDL2.exe
+  	  *EXTRA File 		   3.2 m	BuasGameSDL2.ilk
+  	  *EXTRA File 		   2.0 m	BuasGameSDL2.pdb
   
   ------------------------------------------------------------------------------
   
                  Total    Copied   Skipped  Mismatch    FAILED    Extras
       Dirs :         1         0         1         0         0         1
-     Files :         4         0         4         0         0         3
-     Bytes :    1.44 m         0    1.44 m         0         0    2.86 m
+     Files :         6         0         6         0         0         3
+     Bytes :    1.96 m         0    1.96 m         0         0    5.45 m
      Times :   0:00:00   0:00:00                       0:00:00   0:00:00
-     Ended : Thursday, January 17, 2019 5:23:41 PM
+     Ended : Monday, 21 January 2019 00:53:07
   

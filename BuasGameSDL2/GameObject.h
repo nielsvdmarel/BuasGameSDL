@@ -16,12 +16,15 @@ class GameObject {
 		virtual void Render();
 		virtual void ProccesInput(int keyCode, bool down);
 		virtual void onCollision(std::string tag, GameObject* other);
+		virtual void AnimateFrame(int anim);
 		int xpos;
 		int ypos;
 		SDL_Rect srcRect, destRect;
 		std::string GetTag();
 	protected:
 		SDL_Texture* objTexture;
+		SDL_Texture* testTex;
+		SDL_Texture* originTex;
 		SDL_Renderer* renderer;
 		std::string tag = "GameObject";
 		

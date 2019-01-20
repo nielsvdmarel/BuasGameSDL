@@ -19,5 +19,9 @@ public:
 	float speedx;
 	float speedy;
 	float checkposx;
-	float checkposy;
+	float checkposy; 
+	void AnimateFrame(int anim);
+	int currentFrame;
+	float time;
+	float maxTime = 7;
 };
