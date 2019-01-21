@@ -2,6 +2,7 @@
 #include "Enemy.h"
 #include "System.h"
 #include "GameObject.h"
+#include "Player.h"
 
 class EnemyManager: public System {
 public:

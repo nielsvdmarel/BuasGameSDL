@@ -3,7 +3,7 @@
 Enemy::Enemy(GameObject gameObject): GameObject(gameObject) {
 	//ypos = rand() % (850 - 50 - 1) + 50;
 	scale = 2;
-	speed = 2;
+	speed = -2;
 	tag = "Enemy";
 	testTex = TextureManager::LoadTexture("Assets / p21.png", renderer);
 
@@ -20,7 +20,7 @@ Enemy::~Enemy() {
 }
 
 void Enemy::Update() {
-	xpos -= 1 * speed;
+	xpos += 1 * speed;
 	destRect.x = xpos;
 	destRect.y = ypos;
 	destRect.w = srcRect.w * scale;
@@ -47,17 +47,15 @@ void Enemy::onCollision(std::string otherTag, GameObject* other)
 		//std::cout << "collision on player from enemy" << std::endl;
 		//objTexture = TextureManager::LoadTexture("Assets/p21.png", renderer); // TO TEST with
 
-		srcRect.h = 32;
-		srcRect.w = 14;
-		srcRect.x = 276;
-		srcRect.y = 0;
+		other->xpos += speed;
+
 	}else if (otherTag == "Enemy") {
 		if (other->xpos > xpos) {
-			speed = 5;
+			speed = -4;
 		}
 
 		if (other->xpos < xpos) {
-			speed = 3;
+			speed = -2;
 		}
 		//std::cout << "collision on enemy from enemy" << std::endl;
 	}else if (otherTag == "Wall") {

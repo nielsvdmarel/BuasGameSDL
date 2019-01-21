@@ -32,8 +32,8 @@ void Game::init(const char *title, int xpos, int ypos, int width, int height, bo
 	map = new Map(renderer);
 	map->ParseMap("Assets/Map.txt");
 	enemyManager = new EnemyManager(renderer, allGameObjects);
-	allGameObjects.push_back(new Enemy(GameObject("Assets/penguinsBad.png", renderer, 1000, 500)));
-	allGameObjects.push_back(new Player( GameObject("Assets/penguins.png", renderer, 0 , 0), input));
+	allGameObjects.push_back(new Enemy(GameObject("Assets/penguinsBad.png", renderer, 2000, 500)));
+	allGameObjects.push_back(new Player(GameObject("Assets/penguins.png", renderer, 1000, 500), input));
 	collission = new Collision(allGameObjects);
 }
 

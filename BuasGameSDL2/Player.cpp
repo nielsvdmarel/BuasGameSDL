@@ -1,9 +1,7 @@
 #include "Player.h"
 
 Player::Player(GameObject gameObject, Input & i) : GameObject(gameObject), input(i) {
-	xpos = 200;
 	checkposx = xpos;
-	ypos = 580;
 	checkposy = ypos;
 	speedx = 0;
 	speedy = 0;
@@ -81,6 +79,7 @@ void Player::Update() {
 }
 
 void Player::Render() {
+	
 	if (input.GetKeyDown(4) || DirectionX == -1) {
 		SDL_RenderCopyEx(renderer, objTexture, &srcRect, &destRect, 0, 0,  SDL_FLIP_HORIZONTAL);
 	} else
@@ -91,13 +90,15 @@ void Player::Render() {
 		SDL_RenderCopyEx(renderer, objTexture, &srcRect, &destRect, 0, 0, SDL_FLIP_NONE);
 	}
 	
+	//SDL_RenderCopyEx(renderer, objTexture, &srcRect, &destRect, 0, 0, SDL_FLIP_NONE);
 }
 
 void Player::onCollision(std::string otherTag, GameObject* other)
 {
 	if (otherTag == "Enemy") {
-		//other->ypos += speedy * 2;
-		//other->xpos += speedx * 2;
+		if (input.GetKeyDown(7)) {
+			speedx = 0;
+		}
 		//std::cout << "PLAYER TOUCHED A ENEMY" << std::endl;
 	} else if (otherTag == "Wall") {
 
