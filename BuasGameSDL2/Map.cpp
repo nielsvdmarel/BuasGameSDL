@@ -94,7 +94,7 @@ void Map::DrawMap(SDL_Renderer* ren) {
 			type = maps[row][column];
 			dest.x = column * 24 * scale;
 			dest.y = row * 24 * scale;
-			dest.y -= 100; //TODO make map move when camera follows player
+			dest.y -= 100;
 			TextureManager::Draw(Tiles[type], src, dest, ren);
 		}
 	}

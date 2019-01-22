@@ -33,7 +33,7 @@ void EnemyManager::Update() {
 				}
 				int Random2= rand() % 6 + 1;
 				if (Random2 == 4) {
-					enemy->scale = 2;
+					enemy->scale = 3;
 				}
 				enemy->SetEnemyPosScale(i);
 				AddGameObjectToObjects(enemy);

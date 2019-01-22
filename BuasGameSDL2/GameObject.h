@@ -7,9 +7,9 @@
 #include <iostream>
 
 class GameObject {
-
 	public:
-		GameObject(const char * textureSheet, SDL_Renderer* ren, int x, int y);
+		GameObject(const std::string & textureSheet, SDL_Renderer* ren, int x, int y);
+		GameObject(SDL_Texture * textureSheet, SDL_Renderer* ren, int x, int y);
 		~GameObject();
 		float scale = 2;
 	 	virtual void Update();
@@ -21,11 +21,10 @@ class GameObject {
 		int ypos;
 		SDL_Rect srcRect, destRect;
 		std::string GetTag();
+		std::string tag = "GameObject";
 	protected:
 		SDL_Texture* objTexture;
 		SDL_Texture* testTex;
 		SDL_Texture* originTex;
 		SDL_Renderer* renderer;
-		std::string tag = "GameObject";
-		
 };

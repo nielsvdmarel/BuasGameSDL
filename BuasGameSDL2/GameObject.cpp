@@ -1,15 +1,23 @@
 #include "GameObject.h"
 
-GameObject::GameObject(const char* textureSheet, SDL_Renderer* ren , int x, int y) {
+GameObject::GameObject(const std::string & textureSheet, SDL_Renderer* ren , int x, int y) {
 	renderer = ren;
 	objTexture = TextureManager::LoadTexture(textureSheet, ren);
 	xpos = x;
 	ypos = y;
+	srcRect.h = 24;
+	srcRect.w = 24;
+	srcRect.x = 0;
+	srcRect.y = 0;
+}
 
-
-	//dit zat in de update
-	srcRect.w = 33;
-	srcRect.h = 32;
+GameObject::GameObject(SDL_Texture* textureSheet, SDL_Renderer* ren, int x, int y) {
+	renderer = ren;
+	objTexture = textureSheet;
+	xpos = x;
+	ypos = y;
+	srcRect.h = 24;
+	srcRect.w = 24;
 	srcRect.x = 0;
 	srcRect.y = 0;
 }
@@ -20,10 +28,6 @@ GameObject::~GameObject()
 }
 
 void GameObject::Update() {
-
-	xpos++;
-	ypos++;
-
 	destRect.x = xpos;
 	destRect.y = ypos;
 	destRect.w = srcRect.w * scale;
@@ -31,7 +35,9 @@ void GameObject::Update() {
 }
 
 void GameObject::Render() {
-	SDL_RenderCopy(renderer, objTexture, &srcRect, &destRect);
+	if (objTexture) {
+		SDL_RenderCopy(renderer, objTexture, &srcRect, &destRect);
+	}
 }
 
 void GameObject::ProccesInput(int keyCode, bool down)

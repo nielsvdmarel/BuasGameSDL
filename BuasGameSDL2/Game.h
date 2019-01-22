@@ -13,6 +13,7 @@
 #include "System.h"
 #include "EnemyManager.h"
 #include "Physics.h"
+#include "MapColliders.h"
 
 class Game {
 
@@ -28,6 +29,7 @@ public:
 	EnemyManager* enemyManager;
 	bool running() { return isRunning; }
 	Map* map;
+	MapColliders* mapColliders;
 	int DirectionX;
 	int DirectionY;
 	Collision* collission;

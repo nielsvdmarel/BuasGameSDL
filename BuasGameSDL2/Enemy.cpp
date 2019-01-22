@@ -5,10 +5,9 @@ Enemy::Enemy(GameObject gameObject): GameObject(gameObject) {
 	scale = 2;
 	speed = -2;
 	tag = "Enemy";
-	testTex = TextureManager::LoadTexture("Assets / p21.png", renderer);
 
 
-	// dit zat in de update
+	// dit zat in de updateDD
 	srcRect.h = 32;
 	srcRect.w = 15;
 	srcRect.x = 0;
@@ -44,10 +43,26 @@ void Enemy::Render() {
 void Enemy::onCollision(std::string otherTag, GameObject* other)
 {
 	if (otherTag == "Player") {
-		//std::cout << "collision on player from enemy" << std::endl;
-		//objTexture = TextureManager::LoadTexture("Assets/p21.png", renderer); // TO TEST with
+		int xposC = xpos + destRect.w /2;
+		int yposC = ypos + destRect.y /2;
+		int otherXposC = other->xpos + other->destRect.w /2;
+		int otherYposC = other->ypos + other->destRect.h / 2;
 
-		other->xpos += speed;
+		if (abs(otherXposC - xposC) < abs(otherYposC - yposC) + other->destRect.h /2 ) {
+			if (otherXposC < xposC) {
+				other->xpos = (xpos - other->destRect.w);
+			} else {
+				other->xpos = (xpos + other->destRect.w);
+			}
+		} else {
+			if (otherYposC < yposC) {
+				other->ypos = (ypos - other->destRect.h);
+			}
+			else {
+				other->ypos = (ypos + other->destRect.h);
+			}
+		}
+		
 
 	}else if (otherTag == "Enemy") {
 		if (other->xpos > xpos) {
@@ -63,7 +78,6 @@ void Enemy::onCollision(std::string otherTag, GameObject* other)
 	}else if (otherTag == "border") {
 
 	}
-	
 }
 
 void Enemy::SetEnemyPosScale(int beginYPos)

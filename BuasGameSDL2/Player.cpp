@@ -96,13 +96,13 @@ void Player::Render() {
 void Player::onCollision(std::string otherTag, GameObject* other)
 {
 	if (otherTag == "Enemy") {
-		if (input.GetKeyDown(7)) {
-			speedx = 0;
-		}
+		//if (input.GetKeyDown(7)) {
+		//	speedx = 0;
+		//}
 		//std::cout << "PLAYER TOUCHED A ENEMY" << std::endl;
 	} else if (otherTag == "Wall") {
 
-	} else if (otherTag == "border") {
+	} else if (otherTag == "Border") {
 
 	}
 }
