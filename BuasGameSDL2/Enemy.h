@@ -13,10 +13,16 @@ public:
 	void SetEnemyPosScale(int beginYPos);
 	void AnimateFrame(int Anim);
 	void Animate(int beginFrame, int endFrame);
+	void ResetEnemy();
 	int speed = 4;
-	float time;
+	float animationTime;
 	float animationInterval = 10;
 	float currentFrame;
+
+	int randomSpeedTime;
+	int randomSpeedInterval;
+	int randomSpeedMin = 100;
+	int randomSpeedMax = 200;
 private:
 	bool walking;
 	int beginFrame = 1;

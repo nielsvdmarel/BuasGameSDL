@@ -1,23 +1,15 @@
-﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(376,5): warning MSB8004: Intermediate Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Intermediate Directory.
-  Enemy.cpp
-d:\cppprojectsgit\buasgamesdl\buasgamesdl2\enemy.cpp(24): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-d:\cppprojectsgit\buasgamesdl\buasgamesdl2\enemy.cpp(25): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-d:\cppprojectsgit\buasgamesdl\buasgamesdl2\enemy.cpp(42): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-d:\cppprojectsgit\buasgamesdl\buasgamesdl2\enemy.cpp(49): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-  EnemyManager.cpp
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(372,5): warning MSB8004: Intermediate Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Intermediate Directory.
   Game.cpp
-d:\cppprojectsgit\buasgamesdl\buasgamesdl2\game.cpp(14): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-  main.cpp
-  Generating Code...
-  BuasGameSDL2.vcxproj -> D:\cppProjectsGit\BuasGameSDL\Debug\BuasGameSDL2.exe
+d:\cppgit\buasgamesdl\buasgamesdl2\game.cpp(14): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  BuasGameSDL2.vcxproj -> D:\cppGit\BuasGameSDL\Debug\BuasGameSDL2.exe
   
   -------------------------------------------------------------------------------
      ROBOCOPY     ::     Robust File Copy for Windows                              
   -------------------------------------------------------------------------------
   
-    Started : Wednesday, January 23, 2019 5:38:45 PM
-     Source : D:\cppProjectsGit\BuasGameSDL\BuasGameSDL2\Assets\
-       Dest : D:\cppProjectsGit\BuasGameSDL\Debug\Assets\
+    Started : Wednesday, 23 January 2019 23:48:12
+     Source : D:\cppGit\BuasGameSDL\BuasGameSDL2\Assets\
+       Dest : D:\cppGit\BuasGameSDL\Debug\Assets\
   
       Files : *.*
   	    
@@ -25,12 +17,12 @@ d:\cppprojectsgit\buasgamesdl\buasgamesdl2\game.cpp(14): warning C4244: 'argumen
   
   ------------------------------------------------------------------------------
   
-  	                  25	D:\cppProjectsGit\BuasGameSDL\BuasGameSDL2\Assets\
+  	                  25	D:\cppGit\BuasGameSDL\BuasGameSDL2\Assets\
   	  *EXTRA File 		    4325	PenguinSpriteSheetP.png
-  	                  11	D:\cppProjectsGit\BuasGameSDL\BuasGameSDL2\Assets\IceToSnow\
-  	                  12	D:\cppProjectsGit\BuasGameSDL\BuasGameSDL2\Assets\IceToWater\
-  	                   3	D:\cppProjectsGit\BuasGameSDL\BuasGameSDL2\Assets\MainTiles\
-  	                   8	D:\cppProjectsGit\BuasGameSDL\BuasGameSDL2\Assets\SnowToIce\
+  	                  11	D:\cppGit\BuasGameSDL\BuasGameSDL2\Assets\IceToSnow\
+  	                  12	D:\cppGit\BuasGameSDL\BuasGameSDL2\Assets\IceToWater\
+  	                   3	D:\cppGit\BuasGameSDL\BuasGameSDL2\Assets\MainTiles\
+  	                   8	D:\cppGit\BuasGameSDL\BuasGameSDL2\Assets\SnowToIce\
   
   ------------------------------------------------------------------------------
   
@@ -39,16 +31,16 @@ d:\cppprojectsgit\buasgamesdl\buasgamesdl2\game.cpp(14): warning C4244: 'argumen
      Files :        59         0        59         0         0         1
      Bytes :   404.0 k         0   404.0 k         0         0     4.2 k
      Times :   0:00:00   0:00:00                       0:00:00   0:00:00
-     Ended : Wednesday, January 23, 2019 5:38:45 PM
+     Ended : Wednesday, 23 January 2019 23:48:12
   
   
   -------------------------------------------------------------------------------
      ROBOCOPY     ::     Robust File Copy for Windows                              
   -------------------------------------------------------------------------------
   
-    Started : Wednesday, January 23, 2019 5:38:45 PM
-     Source : D:\cppProjectsGit\BuasGameSDL\BuasGameSDL2\dlls\
-       Dest : D:\cppProjectsGit\BuasGameSDL\Debug\
+    Started : Wednesday, 23 January 2019 23:48:12
+     Source : D:\cppGit\BuasGameSDL\BuasGameSDL2\dlls\
+       Dest : D:\cppGit\BuasGameSDL\Debug\
   
       Files : *.*
   	    
@@ -56,18 +48,18 @@ d:\cppprojectsgit\buasgamesdl\buasgamesdl2\game.cpp(14): warning C4244: 'argumen
   
   ------------------------------------------------------------------------------
   
-  	                   4	D:\cppProjectsGit\BuasGameSDL\BuasGameSDL2\dlls\
-  	*EXTRA Dir        -1	D:\cppProjectsGit\BuasGameSDL\Debug\Assets\
-  	  *EXTRA File 		  236032	BuasGameSDL2.exe
-  	  *EXTRA File 		   1.8 m	BuasGameSDL2.ilk
-  	  *EXTRA File 		   1.7 m	BuasGameSDL2.pdb
+  	                   6	D:\cppGit\BuasGameSDL\BuasGameSDL2\dlls\
+  	*EXTRA Dir        -1	D:\cppGit\BuasGameSDL\Debug\Assets\
+  	  *EXTRA File 		  197120	BuasGameSDL2.exe
+  	  *EXTRA File 		   3.0 m	BuasGameSDL2.ilk
+  	  *EXTRA File 		   2.3 m	BuasGameSDL2.pdb
   
   ------------------------------------------------------------------------------
   
                  Total    Copied   Skipped  Mismatch    FAILED    Extras
       Dirs :         1         0         1         0         0         1
-     Files :         4         0         4         0         0         3
-     Bytes :    1.44 m         0    1.44 m         0         0    3.81 m
+     Files :         6         0         6         0         0         3
+     Bytes :    1.96 m         0    1.96 m         0         0    5.49 m
      Times :   0:00:00   0:00:00                       0:00:00   0:00:00
-     Ended : Wednesday, January 23, 2019 5:38:45 PM
+     Ended : Wednesday, 23 January 2019 23:48:12
   

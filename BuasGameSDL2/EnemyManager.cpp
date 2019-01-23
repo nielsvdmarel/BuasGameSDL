@@ -11,30 +11,16 @@ EnemyManager::~EnemyManager()
 }
 
 void EnemyManager::Update() {
-	if (objects.size() < 150) {
+	if (objects.size() < 250) {
 	timePassed++;
 	if (timePassed >= 20) {
 		timePassed = 0;
 		for (unsigned int i = 0; i < 10; i++)
 		{
 			int Random = rand() % 3 + 1;
-			if (Random == 1 || Random == 2) {
-				
-			}
-			// wat een tering bende
+			// creates all the enemys. 
 			if (Random == 3) {
 				Enemy * enemy = new Enemy(GameObject("Assets/penguinsBad.png", renderer, 2000, 0));
-				int Random = rand() % 3 + 1;
-				if (Random == 1 || Random == 2) {
-					enemy->speed = -2;
-				}
-				if (Random == 3) {
-					enemy->speed = -1;
-				}
-				int Random2= rand() % 6 + 1;
-				if (Random2 == 4) {
-					enemy->scale = 3;
-				}
 				enemy->SetEnemyPosScale(i);
 				AddGameObjectToObjects(enemy);
 				}

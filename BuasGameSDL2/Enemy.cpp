@@ -5,12 +5,13 @@ Enemy::Enemy(GameObject gameObject): GameObject(gameObject) {
 	scale = 2;
 	speed = -2;
 	tag = "Enemy";
-
 	// animation parameters, enemy starts walk animation at start and sets the animation as a loop
 	beginFrame = 1;
 	endFrame = 3;
 	loop = true;
 	walking = true;
+	animationTime = 0;
+	randomSpeedInterval = rand() % (randomSpeedMax - randomSpeedMin) + randomSpeedMin;
 }
 
 Enemy::~Enemy() {
@@ -23,14 +24,25 @@ void Enemy::Update() {
 	destRect.y = ypos;
 	destRect.w = (srcRect.w * scale);
 	destRect.h = (srcRect.h * scale);
-
 	Animate(beginFrame,endFrame);
+
+	randomSpeedTime++;
+	if (randomSpeedTime >= randomSpeedInterval) {
+		if (speed == -2) {
+			speed = -4;
+		}
+		else if (speed == -4) {
+			speed = -2;
+		}
+		randomSpeedTime = 0;
+		randomSpeedInterval = rand() % (randomSpeedMax - randomSpeedMin) + randomSpeedMin;
+	}
 }
 
 void Enemy::Animate(int beginFrame, int endFrame)
 {
-	time++;
-	if (time >= animationInterval) {
+	animationTime++;
+	if (animationTime >= animationInterval) {
 		if (!cycleDone) {
 			currentFrame++;
 		}
@@ -40,11 +52,23 @@ void Enemy::Animate(int beginFrame, int endFrame)
 			}
 			else if (!loop) {
 				currentFrame = endFrame;
+				ResetEnemy();
 			}
 		}
+		animationTime = 0;
 		AnimateFrame(currentFrame);
-		time = 0;
 	}
+}
+
+void Enemy::ResetEnemy()
+{
+	xpos = 2000;
+	loop = true;
+	beginFrame = 1;
+	endFrame = 3;
+	walking = true;
+	int randomy = rand() % 10;
+	SetEnemyPosScale(randomy);
 }
 
 void Enemy::Render() {
@@ -78,8 +102,6 @@ void Enemy::onCollision(std::string otherTag, GameObject* other)
 				other->ypos = (ypos + destRect.h);
 			}
 		}
-		
-
 	}else if (otherTag == "Enemy") {
 		if (other->xpos > xpos) {
 			speed = -4;
@@ -95,16 +117,29 @@ void Enemy::onCollision(std::string otherTag, GameObject* other)
 
 	}else if (otherTag == "Border") {
 		//penguins go underwaters
-		//beginFrame = 4;
-		//endFrame = 9;
-		//loop = false;
-		//walking = false;
-		//speed = -1;
+		beginFrame = 4;
+		endFrame = 9;
+		loop = false;
+		speed = -1;
 	}
 }
 
 void Enemy::SetEnemyPosScale(int beginYPos)
 {
+	int Random = rand() % 3 + 1;
+	if (Random == 1 || Random == 2) {
+		speed = -4;
+	} else if (Random == 3) {
+		speed = -2;
+	}
+
+	int Random2 = rand() % 10 + 1;
+	if (Random2 == 4) {
+		scale = 3;
+	} else if (Random2 != 4){
+		scale = 2;
+	}
+
 	if (scale <= 2) {
 		ypos = 90 + (beginYPos * 90);
 	}
@@ -138,6 +173,7 @@ void Enemy::AnimateFrame(int anim)
 		break;
 		//Death in water 
 	case 4:
+		walking = false;
 		srcRect.h = 32;
 		srcRect.w = 23;
 		srcRect.x = 164;
