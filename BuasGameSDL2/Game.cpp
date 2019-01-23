@@ -20,7 +20,7 @@ void Game::init(const char *title, int xpos, int ypos, int width, int height, bo
 		std::cout << "subsystems initialised!..." << std::endl;
 		window = SDL_CreateWindow(title, xpos, ypos, width, height, flags);
 		if (window) {
-			std::cout << "window created" << std::endl;
+			std::cout << "window created" << std::endl; 
 		}
 		renderer = SDL_CreateRenderer(window, -1, 0);
 		if (renderer) {

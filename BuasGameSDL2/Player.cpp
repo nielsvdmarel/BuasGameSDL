@@ -96,14 +96,22 @@ void Player::Render() {
 void Player::onCollision(std::string otherTag, GameObject* other)
 {
 	if (otherTag == "Enemy") {
-		//if (input.GetKeyDown(7)) {
-		//	speedx = 0;
-		//}
+	
 		//std::cout << "PLAYER TOUCHED A ENEMY" << std::endl;
 	} else if (otherTag == "Wall") {
 
-	} else if (otherTag == "Border") {
+		int xposC = xpos + destRect.w / 2;
+		int yposC = ypos + destRect.y / 2;
+		int otherXposC = other->xpos + other->destRect.w / 2;
+		int otherYposC = other->ypos + other->destRect.h / 2;
 
+		// here the rest of collision push back
+
+
+
+
+	} else if (otherTag == "Border") {
+		// check enemy death animation sequence, but exit game sequence needed. 
 	}
 }
 
@@ -230,6 +238,12 @@ void Player::AnimateFrame(int anim)
 		srcRect.h = 32;
 		srcRect.w = 14;
 		srcRect.x = 276;
+		srcRect.y = 0;
+		break;
+	case 15:
+		srcRect.h = 0;
+		srcRect.w = 0;
+		srcRect.x = 0;
 		srcRect.y = 0;
 		break;
 	default:

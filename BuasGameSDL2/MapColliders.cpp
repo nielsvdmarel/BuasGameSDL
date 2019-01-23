@@ -60,6 +60,7 @@ void MapColliders::CreateMapColliders()
 			dest.y -= 100;
 			if (type != 0) {
 				GameObject* collider = new GameObject("Assets/Collider.png", renderer, dest.x, dest.y);
+				//GameObject* collider = new GameObject(0, renderer, dest.x, dest.y);
 				objects.push_back(collider);
 				//collider->scale = 40;
 				if (type == 1) {

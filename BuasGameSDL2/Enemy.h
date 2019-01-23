@@ -12,10 +12,15 @@ public:
 	void onCollision(std::string otherTag, GameObject* other);
 	void SetEnemyPosScale(int beginYPos);
 	void AnimateFrame(int Anim);
+	void Animate(int beginFrame, int endFrame);
 	int speed = 4;
 	float time;
-	float maxTime = 10;
+	float animationInterval = 10;
 	float currentFrame;
 private:
-
+	bool walking;
+	int beginFrame = 1;
+	int endFrame = 3;
+	bool loop;
+	bool cycleDone;
 };
