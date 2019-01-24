@@ -14,6 +14,7 @@
 #include "EnemyManager.h"
 #include "Physics.h"
 #include "MapColliders.h"
+#include "Text.h"
 
 class Game {
 
@@ -33,7 +34,7 @@ public:
 	int DirectionX;
 	int DirectionY;
 	Collision* collission;
-
+	Text* text;
 private:
 	int cnt = 0;
 	bool isRunning = false;

@@ -7,6 +7,11 @@ Game::~Game() {
 	for (unsigned int i = 0; i < allGameObjects.size(); i++) {
 		delete allGameObjects[i];
 	}
+	SDL_DestroyRenderer(renderer);
+	SDL_DestroyWindow(window);
+	TTF_Quit();
+	IMG_Quit();
+	SDL_Quit();
 	// this function is called when destructed
 }
 
@@ -38,6 +43,7 @@ void Game::init(const char *title, int xpos, int ypos, int width, int height, bo
 	allGameObjects.push_back(new Player(GameObject("Assets/penguins.png", renderer, 1000, 500), input));
 	//allGameObjects.push_back(new Enemy(GameObject("Assets/penguinsBad.png", renderer, 1000, 500)));
 	collission = new Collision(allGameObjects);
+	text = new Text("Assets/SuperMario256.ttf", 30, "Pushy Penguins", {255, 0, 0, 255 }, renderer);
 }
 
 void Game::handleEvents() {
@@ -53,6 +59,7 @@ void Game::handleEvents() {
 }
 
 void Game::update() {
+	text->displayText(500, 500, renderer);
 	for (unsigned int i = 0; i < allGameObjects.size(); i++) {
 			allGameObjects[i]->Update();
 		}

@@ -15,9 +15,9 @@ public:
 	void Animate(int beginFrame, int endFrame);
 	void ResetEnemy();
 	int speed = 4;
-	float animationTime;
-	float animationInterval = 10;
-	float currentFrame;
+	int animationTime;
+	int animationInterval = 10;
+	int currentFrame;
 
 	int randomSpeedTime;
 	int randomSpeedInterval;

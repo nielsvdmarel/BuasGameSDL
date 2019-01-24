@@ -95,21 +95,38 @@ void Player::Render() {
 
 void Player::onCollision(std::string otherTag, GameObject* other)
 {
+	
 	if (otherTag == "Enemy") {
 	
 		//std::cout << "PLAYER TOUCHED A ENEMY" << std::endl;
 	} else if (otherTag == "Wall") {
 
-		int xposC = xpos + destRect.w / 2;
-		int yposC = ypos + destRect.y / 2;
-		int otherXposC = other->xpos + other->destRect.w / 2;
-		int otherYposC = other->ypos + other->destRect.h / 2;
+		int xposC = xpos + (destRect.w / 2);
+		int yposC = ypos + (destRect.h / 2);
+		int otherXposC = other->xpos + (other->destRect.w / 2);
+		int otherYposC = other->ypos + (other->destRect.h / 2);
+		std::cout << ypos << " 1 = " << std::endl;
 
-		// here the rest of collision push back
-
-
-
-
+		if (abs(otherXposC - xposC) - abs(destRect.w / 2 + other->destRect.w / 2) > abs(otherYposC - yposC) - abs(destRect.h / 2 + other->destRect.h / 2)) {
+			std::cout << ypos << " 2 = " <<std::endl;
+			if (otherXposC < xposC) {
+				xpos = (other->xpos + other->destRect.w);
+			}
+			else {
+				xpos = (other->xpos - destRect.w);
+			}
+		}
+		else {
+			std::cout << ypos << " 3 = " << std::endl;
+			if (otherYposC < yposC) {
+				ypos = other->ypos + other->destRect.h;
+			}
+			else {
+				ypos = other->ypos - destRect.h;
+			}
+		}
+		std::cout << " " << std::endl;
+		
 	} else if (otherTag == "Border") {
 		// check enemy death animation sequence, but exit game sequence needed. 
 	}

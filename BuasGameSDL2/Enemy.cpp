@@ -55,7 +55,7 @@ void Enemy::Animate(int beginFrame, int endFrame)
 				ResetEnemy();
 			}
 		}
-		animationTime = 0;
+		animationTime %= animationInterval;
 		AnimateFrame(currentFrame);
 	}
 }
