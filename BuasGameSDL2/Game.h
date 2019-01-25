@@ -34,7 +34,13 @@ public:
 	int DirectionX;
 	int DirectionY;
 	Collision* collission;
-	Text* text;
+	Text* TitleTxt;
+	Text* StartGameTxt;
+	Text* ScoreTxt;
+	int score;
+	int textTimer;
+	bool OnOffText;
+	bool GameStarted = false;
 private:
 	int cnt = 0;
 	bool isRunning = false;

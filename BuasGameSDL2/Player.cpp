@@ -105,10 +105,8 @@ void Player::onCollision(std::string otherTag, GameObject* other)
 		int yposC = ypos + (destRect.h / 2);
 		int otherXposC = other->xpos + (other->destRect.w / 2);
 		int otherYposC = other->ypos + (other->destRect.h / 2);
-		std::cout << ypos << " 1 = " << std::endl;
 
 		if (abs(otherXposC - xposC) - abs(destRect.w / 2 + other->destRect.w / 2) > abs(otherYposC - yposC) - abs(destRect.h / 2 + other->destRect.h / 2)) {
-			std::cout << ypos << " 2 = " <<std::endl;
 			if (otherXposC < xposC) {
 				xpos = (other->xpos + other->destRect.w);
 			}
@@ -117,7 +115,6 @@ void Player::onCollision(std::string otherTag, GameObject* other)
 			}
 		}
 		else {
-			std::cout << ypos << " 3 = " << std::endl;
 			if (otherYposC < yposC) {
 				ypos = other->ypos + other->destRect.h;
 			}
@@ -125,7 +122,6 @@ void Player::onCollision(std::string otherTag, GameObject* other)
 				ypos = other->ypos - destRect.h;
 			}
 		}
-		std::cout << " " << std::endl;
 		
 	} else if (otherTag == "Border") {
 		// check enemy death animation sequence, but exit game sequence needed. 
