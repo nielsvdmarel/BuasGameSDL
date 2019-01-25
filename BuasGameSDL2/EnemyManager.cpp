@@ -11,7 +11,7 @@ EnemyManager::~EnemyManager()
 }
 
 void EnemyManager::Update() {
-	if (objects.size() < 250) {
+	if (objects.size() < 220) {
 	timePassed++;
 	if (timePassed >= 20) {
 		timePassed = 0;

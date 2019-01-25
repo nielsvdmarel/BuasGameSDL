@@ -28,5 +28,4 @@ private:
 	int beginFrame = 1;
 	int endFrame = 3;
 	bool loop;
-	bool cycleDone;
 };

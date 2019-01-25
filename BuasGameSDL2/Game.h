@@ -41,6 +41,7 @@ public:
 	int textTimer;
 	bool OnOffText;
 	bool GameStarted = false;
+	Player * player;
 private:
 	int cnt = 0;
 	bool isRunning = false;

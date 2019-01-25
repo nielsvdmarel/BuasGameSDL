@@ -50,11 +50,12 @@ void Game::init(const char *title, int xpos, int ypos, int width, int height, bo
 	//New enemymanager object created
 	enemyManager = new EnemyManager(renderer, allGameObjects);
 	//New player object created
-	allGameObjects.push_back(new Player(GameObject("Assets/penguins.png", renderer, 1000, 500), input));
+	player = new Player(GameObject("Assets/penguins.png", renderer, 1000, 500), input);
+	allGameObjects.push_back(player);
 	// Collision(system) object created
 	collission = new Collision(allGameObjects);
 	//Title text created
-	TitleTxt = new Text("Assets/SuperMario256.ttf", 120, "Pushy Penguins!", {255, 255, 255, 255 }, renderer);
+	TitleTxt = new Text("Assets/SuperMario256.ttf", 120, "Pushy Penguins!", {144, 144, 144, 144 }, renderer);
 	//Instruction text created
 	StartGameTxt = new Text("Assets/SuperMario256.ttf", 60, "Press space to start!", { 105, 105, 105, 255 }, renderer);
 	//(High)score text created

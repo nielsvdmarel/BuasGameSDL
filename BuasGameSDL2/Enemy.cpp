@@ -43,9 +43,7 @@ void Enemy::Animate(int beginFrame, int endFrame)
 {
 	animationTime++;
 	if (animationTime >= animationInterval) {
-		if (!cycleDone) {
 			currentFrame++;
-		}
 		if (currentFrame > endFrame) {
 			if (loop) {
 				currentFrame = beginFrame;

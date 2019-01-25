@@ -14,7 +14,7 @@ int main(int argc, char* argv[])
 	int frameTime;
 	Game* game = new Game();
 
-	game->init("Engine", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 1920, 1080, false);
+	game->init("Pushy-Penguins", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 1920, 1080, false);
 	while (game->running())
 	{
 		frameStart = SDL_GetTicks();

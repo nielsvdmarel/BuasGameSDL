@@ -12,6 +12,12 @@ Player::Player(GameObject gameObject, Input & i) : GameObject(gameObject), input
 	srcRect.w = 15;
 	srcRect.x = 0;
 	srcRect.y = 0;
+	alive = true;
+
+	beginFrame = 1;
+	endFrame = 3;
+	animationTime = 0;
+	Animating = false;
 }
 
 Player::~Player()
@@ -19,17 +25,34 @@ Player::~Player()
 
 }
 
-void Player::Update() {
-
-	if (input.GetKeyDown(4) || input.GetKeyDown(7)|| input.GetKeyDown(22)|| input.GetKeyDown(26)) {
-		time++;
-		if (time >= maxTime) {
-			currentFrame++;
-			time = 0;
-			AnimateFrame(currentFrame);
-			if (currentFrame > 2) {
-				currentFrame = 0;
+void Player::Animate(int beginFrame, int endFrame) {
+	if (Animating) {
+		animationTime++;
+		if (animationTime >= animationInterval) 
+				currentFrame++;
+			if (currentFrame > endFrame) {
+				if (loop) {
+					currentFrame = beginFrame;
+					Animating = false;
+				}
+				else if (!loop) {
+					currentFrame = endFrame;
+					//Penguin death set
+				}
 			}
+			animationTime %= animationInterval;
+			AnimateFrame(currentFrame);
+	}
+}
+
+void Player::Update() {
+	Animate(beginFrame, endFrame);
+	if (alive) {
+		if (input.GetKeyDown(4) || input.GetKeyDown(7) || input.GetKeyDown(22) || input.GetKeyDown(26)) {
+			loop = true;
+			beginFrame = 1;
+			endFrame = 3;
+			Animating = true;
 		}
 	}
 	
@@ -80,17 +103,19 @@ void Player::Update() {
 
 void Player::Render() {
 	
-	if (input.GetKeyDown(4) || DirectionX == -1) {
-		SDL_RenderCopyEx(renderer, objTexture, &srcRect, &destRect, 0, 0,  SDL_FLIP_HORIZONTAL);
-	} else
-	if (input.GetKeyDown(7) || DirectionX == 1) {
-		SDL_RenderCopyEx(renderer, objTexture, &srcRect, &destRect ,0 , 0, SDL_FLIP_NONE);
+	SDL_RenderCopyEx(renderer, objTexture, &srcRect, &destRect, 0, 0, flip);
+	if (alive) {
+		if (input.GetKeyDown(4) || DirectionX == -1) {
+			flip = SDL_FLIP_HORIZONTAL;
+		}
+		else
+			if (input.GetKeyDown(7) || DirectionX == 1 || !alive) {
+				flip = SDL_FLIP_NONE;
+			}
+			else {
+				flip = SDL_FLIP_NONE;
+			}
 	}
-	else {
-		SDL_RenderCopyEx(renderer, objTexture, &srcRect, &destRect, 0, 0, SDL_FLIP_NONE);
-	}
-	
-	//SDL_RenderCopyEx(renderer, objTexture, &srcRect, &destRect, 0, 0, SDL_FLIP_NONE);
 }
 
 void Player::onCollision(std::string otherTag, GameObject* other)
@@ -124,6 +149,17 @@ void Player::onCollision(std::string otherTag, GameObject* other)
 		}
 		
 	} else if (otherTag == "Border") {
+		if (alive != false) {
+			alive = false;
+			loop = false;
+			beginFrame = 10;
+			endFrame = 15;
+			currentFrame = beginFrame;
+			Animating = true;
+			speedx = 0;
+			speedy = 0;
+			flip = SDL_FLIP_NONE;
+		}
 		// check enemy death animation sequence, but exit game sequence needed. 
 	}
 }
@@ -161,6 +197,19 @@ void Player::checkDirectiony()
 	
 }
 
+void Player::ResetPlayer()
+{
+	AnimateFrame(1);
+	xpos = 1000;
+	ypos = 500;
+	speedx = 0;
+	speedy = 0;
+	loop = false;
+	animationTime = 0;
+	Animating = false;
+	alive = true;
+}
+
 void Player::AnimateFrame(int anim)
 {
 	switch (anim)
@@ -181,7 +230,7 @@ void Player::AnimateFrame(int anim)
 	case 3:
 		srcRect.h = 32;
 		srcRect.w = 15;
-		srcRect.x = 32 ;
+		srcRect.x = 32;
 		srcRect.y = 0;
 		break;
 		//Normal upward walk cycle (4-5-6)
@@ -258,9 +307,9 @@ void Player::AnimateFrame(int anim)
 		srcRect.w = 0;
 		srcRect.x = 0;
 		srcRect.y = 0;
+		ResetPlayer();
 		break;
 	default:
-		
 		break;
 	}
 }
