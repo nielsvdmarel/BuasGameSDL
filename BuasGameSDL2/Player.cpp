@@ -65,38 +65,41 @@ void Player::Update() {
 	destRect.w = srcRect.w * scale;
 	destRect.h = srcRect.h * scale;
 	//std::cout << speed << std::endl;
-	if (input.GetKeyDown(4) || input.GetKeyDown(7)) {
+	if (alive) {
 
-		if (speedx < 3) {
-			speedx += .30f;
+		if (input.GetKeyDown(4) || input.GetKeyDown(7)) {
+
+			if (speedx < 3) {
+				speedx += .30f;
+			}
+			else {
+				speedx = 3;
+			}
 		}
 		else {
-			speedx = 3;
+			if (speedx > 0) {
+				speedx -= .08f;
+			}
+			else if (speedx <= 0) {
+				speedx = 0;
+			}
 		}
-	}
-	else {
-		if (speedx > 0) {
-			speedx -= .08f;
-		}
-		else if (speedx <= 0){
-			speedx = 0;
-		}
-	}
 
-	if (input.GetKeyDown(22) || input.GetKeyDown(26)) {
-		if (speedy < 3) {
-			speedy += .30f;
+		if (input.GetKeyDown(22) || input.GetKeyDown(26)) {
+			if (speedy < 3) {
+				speedy += .30f;
+			}
+			else {
+				speedy = 3;
+			}
 		}
 		else {
-			speedy = 3;
-		}
-	}
-	else {
-		if (speedy > 0) {
-			speedy -= .08f;
-		}
-		else if (speedy <= 0) {
-			speedy = 0;
+			if (speedy > 0) {
+				speedy -= .08f;
+			}
+			else if (speedy <= 0) {
+				speedy = 0;
+			}
 		}
 	}
 }
@@ -159,6 +162,7 @@ void Player::onCollision(std::string otherTag, GameObject* other)
 			speedx = 0;
 			speedy = 0;
 			flip = SDL_FLIP_NONE;
+			Started = false;
 		}
 		// check enemy death animation sequence, but exit game sequence needed. 
 	}
@@ -200,14 +204,14 @@ void Player::checkDirectiony()
 void Player::ResetPlayer()
 {
 	AnimateFrame(1);
-	xpos = 1000;
+	xpos = -3000;
 	ypos = 500;
 	speedx = 0;
 	speedy = 0;
 	loop = false;
 	animationTime = 0;
 	Animating = false;
-	alive = true;
+	alive = false;
 }
 
 void Player::AnimateFrame(int anim)

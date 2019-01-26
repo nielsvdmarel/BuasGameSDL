@@ -1,6 +1,6 @@
 #include "MapColliders.h"
 
-MapColliders::MapColliders(SDL_Renderer* ren, std::vector<GameObject*>& gameObjects) : objects(gameObjects)
+MapColliders::MapColliders(SDL_Renderer* ren, bool& gameStarted, std::vector<GameObject*>& gameObjects) : objects(gameObjects), started(gameStarted)
 {
 	scale = 2;
 	renderer = ren;
@@ -60,7 +60,7 @@ void MapColliders::CreateMapColliders()
 			dest.y -= 100;
 			if (type != 0) {
 				//GameObject* collider = new GameObject("Assets/Collider.png", renderer, dest.x, dest.y);
-				GameObject* collider = new GameObject(0, renderer, dest.x, dest.y);
+				GameObject* collider = new GameObject(0, renderer, dest.x, dest.y, started);
 				objects.push_back(collider);
 				//collider->scale = 40;
 				if (type == 1) {

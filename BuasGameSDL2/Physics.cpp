@@ -46,8 +46,3 @@ void Collision::pushBackGameObjects(GameObject * first, GameObject * other)
 {
 
 }
-
-void Collision::EnemyImpact()
-{
-
-}

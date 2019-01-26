@@ -10,7 +10,6 @@ public:
 	void update();
 	bool checkCollision(GameObject * first, GameObject * other);
 	void pushBackGameObjects(GameObject * first, GameObject * other);
-	void EnemyImpact();
 private:
 	std::vector<GameObject*>& objects;
 };

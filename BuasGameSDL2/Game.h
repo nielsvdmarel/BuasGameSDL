@@ -35,14 +35,16 @@ public:
 	int DirectionY;
 	Collision* collission;
 	Text* TitleTxt;
+	Text* ExtraText;
 	Text* StartGameTxt;
 	Text* ScoreTxt;
 	int score;
+	int realScore;
 	int textTimer;
 	bool OnOffText;
-	bool GameStarted = false;
 	Player * player;
 private:
+	bool GameStarted = false;
 	int cnt = 0;
 	bool isRunning = false;
 	SDL_Event event;

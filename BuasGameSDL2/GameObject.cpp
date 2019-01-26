@@ -1,6 +1,6 @@
 #include "GameObject.h"
 
-GameObject::GameObject(const std::string & textureSheet, SDL_Renderer* ren , int x, int y) {
+GameObject::GameObject(const std::string & textureSheet, SDL_Renderer* ren , int x, int y, bool& gameStarted) : Started(gameStarted) {
 	renderer = ren;
 	objTexture = TextureManager::LoadTexture(textureSheet, ren);
 	xpos = x;
@@ -11,7 +11,7 @@ GameObject::GameObject(const std::string & textureSheet, SDL_Renderer* ren , int
 	srcRect.y = 0;
 }
 
-GameObject::GameObject(SDL_Texture* textureSheet, SDL_Renderer* ren, int x, int y) {
+GameObject::GameObject(SDL_Texture* textureSheet, SDL_Renderer* ren, int x, int y, bool& gameStarted): Started(gameStarted) {
 	renderer = ren;
 	objTexture = textureSheet;
 	xpos = x;

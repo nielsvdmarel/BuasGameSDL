@@ -42,15 +42,15 @@ void Game::init(const char *title, int xpos, int ypos, int width, int height, bo
 	//Reads map file, import text to map vector, spawn tiles 
 	map->ParseMap("Assets/Map.txt");
 	// Creates map colliders object
-	mapColliders = new MapColliders(renderer, allGameObjects);
+	mapColliders = new MapColliders(renderer, GameStarted, allGameObjects);
 	//Reads map colliders file to fill in vector
 	mapColliders->ParseMap("Assets/CollisionMap.txt");
 	//Creates actual colliders based on new vector data
 	mapColliders->CreateMapColliders();
 	//New enemymanager object created
-	enemyManager = new EnemyManager(renderer, allGameObjects);
+	enemyManager = new EnemyManager(renderer, GameStarted, allGameObjects);
 	//New player object created
-	player = new Player(GameObject("Assets/penguins.png", renderer, 1000, 500), input);
+	player = new Player(GameObject("Assets/penguins.png", renderer, 1000, 500, GameStarted), input);
 	allGameObjects.push_back(player);
 	// Collision(system) object created
 	collission = new Collision(allGameObjects);
@@ -58,8 +58,10 @@ void Game::init(const char *title, int xpos, int ypos, int width, int height, bo
 	TitleTxt = new Text("Assets/SuperMario256.ttf", 120, "Pushy Penguins!", {144, 144, 144, 144 }, renderer);
 	//Instruction text created
 	StartGameTxt = new Text("Assets/SuperMario256.ttf", 60, "Press space to start!", { 105, 105, 105, 255 }, renderer);
+	
+	ExtraText = new Text("Assets/SuperMario256.ttf", 50, "Don't get pushed off the icy snow!", { 144, 144, 144, 144 }, renderer);
 	//(High)score text created
-	ScoreTxt = new Text("Assets/SuperMario256.ttf", 70, "High Score : 600", { 105, 105, 105, 255 }, renderer);
+	//ScoreTxt = new Text("Assets/SuperMario256.ttf", 70, "High Score : 600", { 105, 105, 105, 255 }, renderer);
 }
 
 void Game::handleEvents() {
@@ -76,6 +78,11 @@ void Game::handleEvents() {
 }
 
 void Game::update() {
+	if (score != NULL) {
+		realScore = score / 60;
+		//TitleTxt = new Text("Assets/SuperMario256.ttf", 80, "Game over! Your score: " + std::to_string(realScore), { 144, 144, 144, 144 }, renderer);
+		//StartGameTxt = new Text("Assets/SuperMario256.ttf", 60, "Press escape to close the game", { 105, 105, 105, 255 }, renderer);
+	}
 	//handles the collider updates on all Gameobjects with colliders
 	collission->update();
 	//updates all GameObjects
@@ -96,12 +103,18 @@ void Game::update() {
 		}
 		if (GameStarted) {
 			enemyManager->Update();
-			ScoreTxt = new Text("Assets/SuperMario256.ttf", 70, "score : " + std::to_string(score / 60), { 105, 105, 105, 255 }, renderer);
+			score++;
+			ScoreTxt = new Text("Assets/SuperMario256.ttf", 70, "score : " + std::to_string(realScore), { 105, 105, 105, 255 }, renderer);
 			score++;
 		}
 		//Handles starting the game by pressing space
 		if (input.GetKeyDown(44)) {
-			GameStarted = true;
+			if (!GameStarted) {
+				//enemyManager->ReGroupAllEnemysNewRound();
+				if (player->alive) {
+					GameStarted = true;
+				}
+			}
 		}
 
 		//Handles quiting the game
@@ -121,11 +134,14 @@ void Game::render() {
 		allGameObjects[i]->Render();
 	}
 	//Handles renderering text
-	ScoreTxt->displayText(0, 0, renderer);
+	if (ScoreTxt != NULL) {
+		ScoreTxt->displayText(0, 0, renderer);
+	}
 	if (!GameStarted) {
-		TitleTxt->displayText(500, 800, renderer);
+		TitleTxt->displayText(500, 700, renderer);
+		ExtraText->displayText(500, 800, renderer);
 		textTimer++;
-		if (textTimer > 20) {
+		if (textTimer > 40) {
 			if (!OnOffText) {
 				OnOffText = true;
 			}

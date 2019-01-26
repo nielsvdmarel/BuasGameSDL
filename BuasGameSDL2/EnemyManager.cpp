@@ -1,6 +1,6 @@
 #include "EnemyManager.h"
 
-EnemyManager::EnemyManager(SDL_Renderer* ren,std::vector<GameObject*>& gameObjects) : objects(gameObjects)
+EnemyManager::EnemyManager(SDL_Renderer* ren,bool& gameStarted ,std::vector<GameObject*>& gameObjects): objects(gameObjects), started(gameStarted)
 {
 	renderer = ren;
 }
@@ -18,10 +18,11 @@ void EnemyManager::Update() {
 		for (unsigned int i = 0; i < 10; i++)
 		{
 			int Random = rand() % 3 + 1;
-			// creates all the enemys. 
+			// creates all the enemys and places them with frames delay and random positions
 			if (Random == 3) {
-				Enemy * enemy = new Enemy(GameObject("Assets/penguinsBad.png", renderer, 2000, 0));
+				Enemy * enemy = new Enemy(GameObject("Assets/penguinsBad.png", renderer, 2000, 0, started));
 				enemy->SetEnemyPosScale(i);
+				AddGameObjectToEnemys(enemy);
 				AddGameObjectToObjects(enemy);
 				}
 			}
@@ -35,23 +36,8 @@ void EnemyManager::AddGameObjectToObjects(GameObject* gameObject)
 	//std::cout << objects.size() << std::endl;
 }
 
-void EnemyManager::SpawnEnemyAtRandomYPos()
+void EnemyManager::AddGameObjectToEnemys(GameObject * gameObject)
 {
-	
-}
-
-void EnemyManager::StartWave()
-{
-	
-}
-
-void EnemyManager::CheckEnemyPos()
-{
-
-}
-
-void EnemyManager::ResetEnemy()
-{
-	
+	enemys.push_back(gameObject);
 }
 
