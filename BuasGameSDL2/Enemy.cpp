@@ -141,6 +141,7 @@ void Enemy::onCollision(std::string otherTag, GameObject* other) {
 
 void Enemy::SetEnemyPosScale(int beginYPos)
 {
+	//creates random number to use for scale
 	int Random = rand() % 3 + 1;
 	if (Random == 1 || Random == 2) {
 		speed = -5;
@@ -156,9 +157,11 @@ void Enemy::SetEnemyPosScale(int beginYPos)
 	}
 
 	if (scale <= 2) {
+		//Sets ypos calculation with scale.
 		ypos = 90 + (beginYPos * 90);
 	}
 	if (scale >= 3) {
+		//Sets ypos calculation with scale.
 		ypos = 25 + (beginYPos * 90);
 	}
 }

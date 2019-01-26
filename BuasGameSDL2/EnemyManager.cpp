@@ -11,10 +11,13 @@ EnemyManager::~EnemyManager()
 }
 
 void EnemyManager::Update() {
+	//Checks how many objects are already created
 	if (objects.size() < 220) {
 	timePassed++;
+	//Delay for spawning all enemy's
 	if (timePassed >= 20) {
 		timePassed = 0;
+		//Randomly creates enemy's y position
 		for (unsigned int i = 0; i < 10; i++)
 		{
 			int Random = rand() % 3 + 1;
@@ -33,7 +36,6 @@ void EnemyManager::Update() {
 void EnemyManager::AddGameObjectToObjects(GameObject* gameObject)
 {
 	objects.push_back(gameObject);
-	//std::cout << objects.size() << std::endl;
 }
 
 void EnemyManager::AddGameObjectToEnemys(GameObject * gameObject)

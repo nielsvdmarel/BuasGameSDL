@@ -3,8 +3,7 @@
     "",
     "\\BuasGameSDL2",
     "\\BuasGameSDL2\\Assets",
-    "\\Debug",
-    "\\x64"
+    "\\Debug"
   ],
   "SelectedNode": "\\BuasGameSDL2\\BuasGameSDL2.vcxproj",
   "PreviewInSolutionExplorer": false

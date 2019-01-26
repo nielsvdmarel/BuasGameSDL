@@ -15,7 +15,7 @@ public:
 	void Animate(int beginFrame, int endFrame);
 	void checkDirectionx();
 	void checkDirectiony();
-	void ResetPlayer();
+	void PlayerGameOver();
 	int DirectionY;
 	int DirectionX;
 	float speedx;

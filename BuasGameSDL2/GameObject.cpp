@@ -1,5 +1,5 @@
 #include "GameObject.h"
-
+//Gameobject base script
 GameObject::GameObject(const std::string & textureSheet, SDL_Renderer* ren , int x, int y, bool& gameStarted) : Started(gameStarted) {
 	renderer = ren;
 	objTexture = TextureManager::LoadTexture(textureSheet, ren);

@@ -1,16 +1,30 @@
-﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(372,5): warning MSB8004: Intermediate Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Intermediate Directory.
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(376,5): warning MSB8004: Intermediate Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Intermediate Directory.
   Enemy.cpp
-d:\cppgit\buasgamesdl\buasgamesdl2\enemy.cpp(28): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-d:\cppgit\buasgamesdl\buasgamesdl2\enemy.cpp(29): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-  BuasGameSDL2.vcxproj -> D:\cppGit\BuasGameSDL\Debug\BuasGameSDL2.exe
+c:\users\niels\documents\github\buasgamesdl\buasgamesdl2\enemy.cpp(28): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\niels\documents\github\buasgamesdl\buasgamesdl2\enemy.cpp(29): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+  EnemyManager.cpp
+  Game.cpp
+c:\users\niels\documents\github\buasgamesdl\buasgamesdl2\game.cpp(21): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Player.cpp
+c:\users\niels\documents\github\buasgamesdl\buasgamesdl2\player.cpp(4): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\niels\documents\github\buasgamesdl\buasgamesdl2\player.cpp(5): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\niels\documents\github\buasgamesdl\buasgamesdl2\player.cpp(62): warning C4244: '+=': conversion from 'float' to 'int', possible loss of data
+c:\users\niels\documents\github\buasgamesdl\buasgamesdl2\player.cpp(63): warning C4244: '+=': conversion from 'float' to 'int', possible loss of data
+c:\users\niels\documents\github\buasgamesdl\buasgamesdl2\player.cpp(66): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\niels\documents\github\buasgamesdl\buasgamesdl2\player.cpp(67): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\niels\documents\github\buasgamesdl\buasgamesdl2\player.cpp(178): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\niels\documents\github\buasgamesdl\buasgamesdl2\player.cpp(193): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+  main.cpp
+  Generating Code...
+  BuasGameSDL2.vcxproj -> C:\Users\Niels\Documents\GitHub\BuasGameSDL\Debug\BuasGameSDL2.exe
   
   -------------------------------------------------------------------------------
      ROBOCOPY     ::     Robust File Copy for Windows                              
   -------------------------------------------------------------------------------
   
-    Started : Saturday, 26 January 2019 03:20:38
-     Source : D:\cppGit\BuasGameSDL\BuasGameSDL2\Assets\
-       Dest : D:\cppGit\BuasGameSDL\Debug\Assets\
+    Started : zaterdag 26 januari 2019 13:58:02
+     Source : C:\Users\Niels\Documents\GitHub\BuasGameSDL\BuasGameSDL2\Assets\
+       Dest : C:\Users\Niels\Documents\GitHub\BuasGameSDL\Debug\Assets\
   
       Files : *.*
   	    
@@ -18,12 +32,12 @@ d:\cppgit\buasgamesdl\buasgamesdl2\enemy.cpp(29): warning C4244: '=': conversion
   
   ------------------------------------------------------------------------------
   
-  	                  25	D:\cppGit\BuasGameSDL\BuasGameSDL2\Assets\
+  	                  25	C:\Users\Niels\Documents\GitHub\BuasGameSDL\BuasGameSDL2\Assets\
   	  *EXTRA File 		    4325	PenguinSpriteSheetP.png
-  	                  11	D:\cppGit\BuasGameSDL\BuasGameSDL2\Assets\IceToSnow\
-  	                  12	D:\cppGit\BuasGameSDL\BuasGameSDL2\Assets\IceToWater\
-  	                   3	D:\cppGit\BuasGameSDL\BuasGameSDL2\Assets\MainTiles\
-  	                   8	D:\cppGit\BuasGameSDL\BuasGameSDL2\Assets\SnowToIce\
+  	                  11	C:\Users\Niels\Documents\GitHub\BuasGameSDL\BuasGameSDL2\Assets\IceToSnow\
+  	                  12	C:\Users\Niels\Documents\GitHub\BuasGameSDL\BuasGameSDL2\Assets\IceToWater\
+  	                   3	C:\Users\Niels\Documents\GitHub\BuasGameSDL\BuasGameSDL2\Assets\MainTiles\
+  	                   8	C:\Users\Niels\Documents\GitHub\BuasGameSDL\BuasGameSDL2\Assets\SnowToIce\
   
   ------------------------------------------------------------------------------
   
@@ -32,16 +46,16 @@ d:\cppgit\buasgamesdl\buasgamesdl2\enemy.cpp(29): warning C4244: '=': conversion
      Files :        59         0        59         0         0         1
      Bytes :   404.0 k         0   404.0 k         0         0     4.2 k
      Times :   0:00:00   0:00:00                       0:00:00   0:00:00
-     Ended : Saturday, 26 January 2019 03:20:38
+     Ended : zaterdag 26 januari 2019 13:58:02
   
   
   -------------------------------------------------------------------------------
      ROBOCOPY     ::     Robust File Copy for Windows                              
   -------------------------------------------------------------------------------
   
-    Started : Saturday, 26 January 2019 03:20:38
-     Source : D:\cppGit\BuasGameSDL\BuasGameSDL2\dlls\
-       Dest : D:\cppGit\BuasGameSDL\Debug\
+    Started : zaterdag 26 januari 2019 13:58:02
+     Source : C:\Users\Niels\Documents\GitHub\BuasGameSDL\BuasGameSDL2\dlls\
+       Dest : C:\Users\Niels\Documents\GitHub\BuasGameSDL\Debug\
   
       Files : *.*
   	    
@@ -49,18 +63,18 @@ d:\cppgit\buasgamesdl\buasgamesdl2\enemy.cpp(29): warning C4244: '=': conversion
   
   ------------------------------------------------------------------------------
   
-  	                   6	D:\cppGit\BuasGameSDL\BuasGameSDL2\dlls\
-  	*EXTRA Dir        -1	D:\cppGit\BuasGameSDL\Debug\Assets\
-  	  *EXTRA File 		  211456	BuasGameSDL2.exe
-  	  *EXTRA File 		   3.4 m	BuasGameSDL2.ilk
-  	  *EXTRA File 		   2.0 m	BuasGameSDL2.pdb
+  	                   6	C:\Users\Niels\Documents\GitHub\BuasGameSDL\BuasGameSDL2\dlls\
+  	*EXTRA Dir        -1	C:\Users\Niels\Documents\GitHub\BuasGameSDL\Debug\Assets\
+  	  *EXTRA File 		  242176	BuasGameSDL2.exe
+  	  *EXTRA File 		   1.5 m	BuasGameSDL2.ilk
+  	  *EXTRA File 		   1.9 m	BuasGameSDL2.pdb
   
   ------------------------------------------------------------------------------
   
                  Total    Copied   Skipped  Mismatch    FAILED    Extras
       Dirs :         1         0         1         0         0         1
      Files :         6         0         6         0         0         3
-     Bytes :    1.96 m         0    1.96 m         0         0    5.75 m
+     Bytes :    1.96 m         0    1.96 m         0         0    3.72 m
      Times :   0:00:00   0:00:00                       0:00:00   0:00:00
-     Ended : Saturday, 26 January 2019 03:20:38
+     Ended : zaterdag 26 januari 2019 13:58:02
   

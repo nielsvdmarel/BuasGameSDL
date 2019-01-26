@@ -38,13 +38,13 @@ Map::Map(SDL_Renderer* ren) {
 	Tiles.push_back(TextureManager::LoadTexture("Assets/IceToSnow/IceToSnowMMU.png", ren));
 	Tiles.push_back(TextureManager::LoadTexture("Assets/IceToSnow/IceToSnowMMD.png", ren));
 
-	//Extra Tiles
+	//Extra corner Tiles
 	Tiles.push_back(TextureManager::LoadTexture("Assets/IceToSnow/IceToSnowUpCorner.png", ren));
 	Tiles.push_back(TextureManager::LoadTexture("Assets/IceToSnow/DownDownCorner.png", ren));
 	Tiles.push_back(TextureManager::LoadTexture("Assets/IceToWater/IceWaterCornerUp.png", ren));
 	Tiles.push_back(TextureManager::LoadTexture("Assets/IceToWater/IceWaterCornerDown.png", ren));
 
-
+	//Creates a default value for w and h in the maps vector
 	for (int i = 0; i < w; i++) {
 		maps.push_back(std::vector<int>());
 		for (int j = 0; j < h; j++)
@@ -54,22 +54,24 @@ Map::Map(SDL_Renderer* ren) {
 	src.y = 0;
 	src.w = dest.w = 24 * scale;
 	src.h = dest.h = 24 * scale;
-
-	dest.x = dest.y = 0;
-
+	dest.x = 0;
+    dest.y = 0;
 }
 
 Map::~Map() {
 
 }
 
+//Reads and uses a file to fill in the map vector with map related data
 void Map::ParseMap(const std::string & name) {
 	std::ifstream mapFile(name);
+	//Checks if mapfile can be opened
 	if (!mapFile.is_open()) std::cout << "cant open file\n ";
-
+	//Creates string for every line in file
 	std::string line;
 	int x = 0;
 	int y = 0;
+	//Gets lines of data from the text file, using strtok
 	while (std::getline(mapFile, line)) {
 		char * token = strtok(&line[0], ",");
 		y = 0;
@@ -79,15 +81,13 @@ void Map::ParseMap(const std::string & name) {
 			token = strtok(0, ",");
 		}
 		x++;
-		
 		std::cout << "\n";
 	}
 	mapFile.close();
 }
-
+//Actually draws the map on the screen
 void Map::DrawMap(SDL_Renderer* ren) {
 	int type = 0;
-
 	for (int row = 0; row < w; row++) {
 
 		for (int column = 0; column < h; column++) {

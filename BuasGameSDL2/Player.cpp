@@ -1,5 +1,5 @@
 #include "Player.h"
-
+//Creates Player object (GameObject)
 Player::Player(GameObject gameObject, Input & i) : GameObject(gameObject), input(i) {
 	checkposx = xpos;
 	checkposy = ypos;
@@ -7,7 +7,6 @@ Player::Player(GameObject gameObject, Input & i) : GameObject(gameObject), input
 	speedy = 0;
 	tag = "Player";
 
-	//dit zat in de update
 	srcRect.h = 32;
 	srcRect.w = 15;
 	srcRect.x = 0;
@@ -19,13 +18,13 @@ Player::Player(GameObject gameObject, Input & i) : GameObject(gameObject), input
 	animationTime = 0;
 	Animating = false;
 }
-
-Player::~Player()
-{
+//Destructor for Player GameObject
+Player::~Player() {
 
 }
 
 void Player::Animate(int beginFrame, int endFrame) {
+	//Aniamte player frames, Depends on selected begin frame and endframe, also loops if the loop bool is true
 	if (Animating) {
 		animationTime++;
 		if (animationTime >= animationInterval) 
@@ -37,16 +36,17 @@ void Player::Animate(int beginFrame, int endFrame) {
 				}
 				else if (!loop) {
 					currentFrame = endFrame;
-					//Penguin death set
 				}
 			}
-			animationTime %= animationInterval;
-			AnimateFrame(currentFrame);
+		animationTime %= animationInterval;
+		//Set actual animation frame
+		AnimateFrame(currentFrame);
 	}
 }
 
 void Player::Update() {
 	Animate(beginFrame, endFrame);
+	//If wasd is pressed, set animation parameters to walk loop.
 	if (alive) {
 		if (input.GetKeyDown(4) || input.GetKeyDown(7) || input.GetKeyDown(22) || input.GetKeyDown(26)) {
 			loop = true;
@@ -55,20 +55,19 @@ void Player::Update() {
 			Animating = true;
 		}
 	}
-	
+	//Checks the direction the player is going
 	checkDirectionx();
 	checkDirectiony();
+	//Adds calculated speed to the player
 	xpos += speedx * ((input.GetKeyDown(4)) ? -1 : (input.GetKeyDown(7)) ? 1 : DirectionX);
 	ypos += speedy * ((input.GetKeyDown(22)) ? 1 : (input.GetKeyDown(26)) ? -1 : DirectionY);
 	destRect.x = xpos;
 	destRect.y = ypos;
 	destRect.w = srcRect.w * scale;
 	destRect.h = srcRect.h * scale;
-	//std::cout << speed << std::endl;
 	if (alive) {
-
+		// if A or D is pressed, add or substract speed x smooth
 		if (input.GetKeyDown(4) || input.GetKeyDown(7)) {
-
 			if (speedx < 3) {
 				speedx += .30f;
 			}
@@ -84,7 +83,7 @@ void Player::Update() {
 				speedx = 0;
 			}
 		}
-
+		// if W or S is pressed, add or substract speed Y smooth
 		if (input.GetKeyDown(22) || input.GetKeyDown(26)) {
 			if (speedy < 3) {
 				speedy += .30f;
@@ -105,7 +104,7 @@ void Player::Update() {
 }
 
 void Player::Render() {
-	
+	//Renders object
 	SDL_RenderCopyEx(renderer, objTexture, &srcRect, &destRect, 0, 0, flip);
 	if (alive) {
 		if (input.GetKeyDown(4) || DirectionX == -1) {
@@ -114,26 +113,22 @@ void Player::Render() {
 		else
 			if (input.GetKeyDown(7) || DirectionX == 1 || !alive) {
 				flip = SDL_FLIP_NONE;
-			}
-			else {
+			} else {
 				flip = SDL_FLIP_NONE;
-			}
+		}
 	}
 }
 
-void Player::onCollision(std::string otherTag, GameObject* other)
-{
-	
+void Player::onCollision(std::string otherTag, GameObject* other) {
 	if (otherTag == "Enemy") {
-	
-		//std::cout << "PLAYER TOUCHED A ENEMY" << std::endl;
+		//Player collided with GameObject with tag "Enemy"
 	} else if (otherTag == "Wall") {
-
+		//Player collided with GameObject with tag "Wall"
 		int xposC = xpos + (destRect.w / 2);
 		int yposC = ypos + (destRect.h / 2);
 		int otherXposC = other->xpos + (other->destRect.w / 2);
 		int otherYposC = other->ypos + (other->destRect.h / 2);
-
+		//If xpos difference if more then y pos difference, checked to know what axis to push back
 		if (abs(otherXposC - xposC) - abs(destRect.w / 2 + other->destRect.w / 2) > abs(otherYposC - yposC) - abs(destRect.h / 2 + other->destRect.h / 2)) {
 			if (otherXposC < xposC) {
 				xpos = (other->xpos + other->destRect.w);
@@ -150,8 +145,9 @@ void Player::onCollision(std::string otherTag, GameObject* other)
 				ypos = other->ypos - destRect.h;
 			}
 		}
-		
 	} else if (otherTag == "Border") {
+		//Player collided with GameObject with tag "Border"
+		//Sets movement speeds to 0, Resets image flip, Starts death animation with needed parameters
 		if (alive != false) {
 			alive = false;
 			loop = false;
@@ -159,50 +155,47 @@ void Player::onCollision(std::string otherTag, GameObject* other)
 			endFrame = 15;
 			currentFrame = beginFrame;
 			Animating = true;
-			speedx = 0;
+			speedx = 2;
 			speedy = 0;
 			flip = SDL_FLIP_NONE;
 			Started = false;
 		}
-		// check enemy death animation sequence, but exit game sequence needed. 
 	}
 }
 
-void Player::checkDirectionx()
-{
-		if (checkposx > xpos) {
-			DirectionX = -1;
-		}
-		if (checkposx < xpos) {
-			DirectionX = 1;
-		}
+void Player::checkDirectionx() {
+	//checks if checkposx is different from real xpos, result is used to set DirectionX
+	if (checkposx > xpos) {
+		DirectionX = -1;
+	}
+	if (checkposx < xpos) {
+		DirectionX = 1;
+	}
 
-		if (checkposx == xpos) {
-			DirectionX = 0;
-		}
-		checkposx = xpos;
-		//std::cout << DirectionX << std::endl;
+	if (checkposx == xpos) {
+		DirectionX = 0;
+	}
+	checkposx = xpos;
+	//std::cout << DirectionX << std::endl;
 }
 
-void Player::checkDirectiony()
-{
-		if (checkposy > ypos) {
-			DirectionY = -1;
-		}
-		if (checkposy < ypos) {
-			DirectionY = 1;
-		}
-
-		if (checkposy == ypos) {
-			DirectionY = 0;
-		}
-		checkposy = ypos;
-		//std::cout << DirectionY << std::endl;
-	
+void Player::checkDirectiony() {
+	//checks if checkposy is different from real ypos, result is used to set DirectionY
+	if (checkposy > ypos) {
+		DirectionY = -1;
+	}
+	if (checkposy < ypos) {
+		DirectionY = 1;
+	}
+	if (checkposy == ypos) {
+		DirectionY = 0;
+	}
+	checkposy = ypos;
+	//std::cout << DirectionY << std::endl;
 }
 
-void Player::ResetPlayer()
-{
+void Player::PlayerGameOver() {
+	//Turns player off when walked off border, game over
 	AnimateFrame(1);
 	xpos = -3000;
 	ypos = 500;
@@ -214,10 +207,8 @@ void Player::ResetPlayer()
 	alive = false;
 }
 
-void Player::AnimateFrame(int anim)
-{
-	switch (anim)
-	{
+void Player::AnimateFrame(int anim) {
+	switch (anim) {
 	//Normal walk cycle (1-2-3), can be inverted for left direction
 	case 1:
 		srcRect.h = 32;
@@ -311,7 +302,8 @@ void Player::AnimateFrame(int anim)
 		srcRect.w = 0;
 		srcRect.x = 0;
 		srcRect.y = 0;
-		ResetPlayer();
+		//Sets player to game over state, after death animation is at last frame
+		PlayerGameOver();
 		break;
 	default:
 		break;
