@@ -7,7 +7,18 @@ Game::Game() {
 Game::~Game() {
 	for (unsigned int i = 0; i < allGameObjects.size(); i++) {
 		delete allGameObjects[i];
+		//This includes player
+		//This includes map colliders
+		//This includes enemys
 	}
+	delete enemyManager;
+	delete map;
+	delete mapColliders;
+	delete collission;
+	delete TitleTxt;
+	delete GoalText;
+	delete StartGameTxt;
+	delete ScoreTxt;
 	SDL_DestroyRenderer(renderer);
 	SDL_DestroyWindow(window);
 	TTF_Quit();
@@ -57,18 +68,21 @@ void Game::init(const char *title, int xpos, int ypos, int width, int height, bo
 	//Title text created
 	TitleTxt = new Text("Assets/SuperMario256.ttf", 120, "Pushy Penguins!", {144, 144, 144, 144 }, renderer);
 	//Instruction text created
-	StartGameTxt = new Text("Assets/SuperMario256.ttf", 60, "Press space to start!", { 105, 105, 105, 255 }, renderer);
-	
-	ExtraText = new Text("Assets/SuperMario256.ttf", 50, "Don't get pushed off the icy snow!", { 144, 144, 144, 144 }, renderer);
-	//(High)score text created
-	//ScoreTxt = new Text("Assets/SuperMario256.ttf", 70, "High Score : 600", { 105, 105, 105, 255 }, renderer);
+	startGameText = "Press space to start!";
+	StartGameTxt = new Text("Assets/SuperMario256.ttf", 60, startGameText, { 105, 105, 105, 255 }, renderer);
+	//Creates the text that explains the goal of the games
+	goalGameText = "Don't get pushed off the icy snow!";
+	GoalText = new Text("Assets/SuperMario256.ttf", 50, goalGameText, { 144, 144, 144, 144 }, renderer);
+	//Creates the text that shows the current highScore
+	scoreText = "HighScore: " + std::to_string(HighScore);
+	//ScoreTxt = new Text("Assets/SuperMario256.ttf", 70, scoreText, { 105, 105, 105, 255 }, renderer);
+	ControlsText = new Text("Assets/SuperMario256.ttf", 55, "Use WASD to move", { 105, 105, 105, 255 }, renderer);
 }
 
 void Game::handleEvents() {
 	//SDL events
 	SDL_PollEvent(&event);
-	switch (event.type)
-	{
+	switch (event.type) {
 	case SDL_QUIT:
 		isRunning = false;
 		break;
@@ -78,21 +92,20 @@ void Game::handleEvents() {
 }
 
 void Game::update() {
-	if (score != NULL) {
-		realScore = score / 60;
-		//TitleTxt = new Text("Assets/SuperMario256.ttf", 80, "Game over! Your score: " + std::to_string(realScore), { 144, 144, 144, 144 }, renderer);
-		//StartGameTxt = new Text("Assets/SuperMario256.ttf", 60, "Press escape to close the game", { 105, 105, 105, 255 }, renderer);
-	}
 	//handles the collider updates on all Gameobjects with colliders
 	collission->update();
 	//updates all GameObjects
 	for (unsigned int i = 0; i < allGameObjects.size(); i++) {
 			allGameObjects[i]->Update();
-		}
-
+	}
+	if (GameStarted) {
+		enemyManager->Update();
+		score++;
+		scoreText = "Score: " + std::to_string(score /60);
+		ScoreTxt = new Text("Assets/SuperMario256.ttf", 70, scoreText, { 105, 105, 105, 255 }, renderer);
+	}
 	//Handles main key-input
-	switch (event.type)
-		{
+	switch (event.type) {
 		case SDL_KEYDOWN:
 			input.setKeyDown(event.key.keysym.scancode);
 			//std::cout << event.key.keysym.scancode << std::endl;
@@ -101,27 +114,31 @@ void Game::update() {
 			input.setKeyUp(event.key.keysym.scancode);
 			break;
 		}
-		if (GameStarted) {
-			enemyManager->Update();
-			score++;
-			ScoreTxt = new Text("Assets/SuperMario256.ttf", 70, "score : " + std::to_string(realScore), { 105, 105, 105, 255 }, renderer);
-			score++;
-		}
 		//Handles starting the game by pressing space
 		if (input.GetKeyDown(44)) {
 			if (!GameStarted) {
 				//enemyManager->ReGroupAllEnemysNewRound();
 				if (player->alive) {
 					GameStarted = true;
-				}
+					GameCheck = true;
 			}
 		}
+	}
+	//Handles quiting the game
+	if (input.GetKeyDown(41)) {
+		event.type = SDL_QUIT;
+	}
 
-		//Handles quiting the game
-		if (input.GetKeyDown(41)) {
-			event.type = SDL_QUIT;
+	if (GameCheck) {
+		if (!GameStarted) {
+			ControlsText = new Text("Assets/SuperMario256.ttf", 55, "Game over!", { 105, 105, 105, 255 }, renderer);
+			goalGameText = "You got pushed off!";
+			GoalText = new Text("Assets/SuperMario256.ttf", 50, goalGameText, { 144, 144, 144, 144 }, renderer);
+			startGameText = "Restart the game to retry!";
+			StartGameTxt = new Text("Assets/SuperMario256.ttf", 60, startGameText, { 105, 105, 105, 255 }, renderer);
+			GameCheck = false;
 		}
-
+	}
 }
 
 void Game::render() {
@@ -138,8 +155,9 @@ void Game::render() {
 		ScoreTxt->displayText(0, 0, renderer);
 	}
 	if (!GameStarted) {
-		TitleTxt->displayText(500, 700, renderer);
-		ExtraText->displayText(500, 800, renderer);
+		TitleTxt->displayText(500, 650, renderer);
+		GoalText->displayText(500, 750, renderer);
+		ControlsText->displayText(700, 800, renderer);
 		textTimer++;
 		if (textTimer > 40) {
 			if (!OnOffText) {
@@ -161,7 +179,7 @@ void Game::render() {
 void Game::clean() {
 	SDL_DestroyWindow(window);
 	SDL_DestroyRenderer(renderer);
-	SDL_Quit();
+	//SDL_Quit();
 	std::cout << "Game Cleared" << std::endl;
 }
 

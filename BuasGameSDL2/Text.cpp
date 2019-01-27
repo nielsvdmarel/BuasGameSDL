@@ -1,31 +1,23 @@
 #include "Text.h"
 
-Text::Text(
-	const std::string & fontPath, 
-	int fontSize, 
-	const std::string & messageText,
-	const SDL_Color & color,
-	SDL_Renderer* ren)
-{
+Text::Text(const std::string & fontPath, int fontSize, const std::string & messageText, const SDL_Color & color, SDL_Renderer* ren) {
 	renderer = ren;
 	_textTexture = loadFont(fontPath, fontSize, messageText, color);
 	SDL_QueryTexture(_textTexture, nullptr, nullptr, &textRect.w, &textRect.h);
 }
 
-Text::~Text()
-{
-
+Text::~Text() {
+	SDL_DestroyRenderer(renderer);
+	SDL_DestroyTexture(_textTexture);
 }
 
-void Text::displayText(int x, int y, SDL_Renderer* ren)
-{
+void Text::displayText(int x, int y, SDL_Renderer* ren) {
 	textRect.x = x;
 	textRect.y = y;
 	SDL_RenderCopy(renderer, _textTexture, nullptr, &textRect);
 }
 
-SDL_Texture * Text::loadFont(const std::string &fontPath, int fontSize, const std::string & messageText, const SDL_Color & color)
-{
+SDL_Texture * Text::loadFont(const std::string &fontPath, int fontSize, const std::string & messageText, const SDL_Color & color) {
 	TTF_Font* font = TTF_OpenFont(fontPath.c_str(), fontSize);
 	TTF_SetFontOutline(font, 3);
 	if (!font) {
@@ -41,7 +33,6 @@ SDL_Texture * Text::loadFont(const std::string &fontPath, int fontSize, const st
 	}
 	SDL_FreeSurface(textSurface);
 		return textTexture;
-	
 }
 
 

@@ -59,7 +59,9 @@ Map::Map(SDL_Renderer* ren) {
 }
 
 Map::~Map() {
-
+	for (unsigned int i = 0; i < Tiles.size(); i++) {
+		SDL_DestroyTexture(Tiles[i]);
+	}
 }
 
 //Reads and uses a file to fill in the map vector with map related data

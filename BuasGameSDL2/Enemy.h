@@ -18,7 +18,6 @@ public:
 	int animationTime;
 	int animationInterval = 10;
 	int currentFrame;
-
 	int randomSpeedTime;
 	int randomSpeedInterval;
 	int randomSpeedMin = 100;

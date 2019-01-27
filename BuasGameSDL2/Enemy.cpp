@@ -16,7 +16,7 @@ Enemy::Enemy(GameObject gameObject): GameObject(gameObject) {
 }
 
 Enemy::~Enemy() {
-
+	
 }
 
 void Enemy::Update() {

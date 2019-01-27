@@ -22,11 +22,6 @@ GameObject::GameObject(SDL_Texture* textureSheet, SDL_Renderer* ren, int x, int 
 	srcRect.y = 0;
 }
 
-GameObject::~GameObject()
-{
-
-}
-
 void GameObject::Update() {
 	destRect.x = xpos;
 	destRect.y = ypos;
@@ -40,23 +35,19 @@ void GameObject::Render() {
 	}
 }
 
-void GameObject::ProccesInput(int keyCode, bool down)
-{
+void GameObject::ProccesInput(int keyCode, bool down) {
 
 }
 
-void GameObject::onCollision(std::string tag, GameObject* other)
-{
+void GameObject::onCollision(std::string tag, GameObject* other) {
 
 }
 
-void GameObject::AnimateFrame(int anim)
-{
+void GameObject::AnimateFrame(int anim) {
 
 }
 
-std::string GameObject::GetTag()
-{
+std::string GameObject::GetTag() {
 	return tag;
 }
 

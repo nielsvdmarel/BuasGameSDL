@@ -16,6 +16,8 @@ public:
 	void checkDirectionx();
 	void checkDirectiony();
 	void PlayerGameOver();
+	void RespawnPlayer();
+	void checkDeathState();
 	int DirectionY;
 	int DirectionX;
 	float speedx;

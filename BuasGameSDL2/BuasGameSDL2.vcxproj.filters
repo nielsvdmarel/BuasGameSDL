@@ -56,9 +56,6 @@
     <ClCompile Include="TextureManager.cpp">
       <Filter>Resource Files\Source Files\CPPfiles</Filter>
     </ClCompile>
-    <ClCompile Include="mainBackup.cpp">
-      <Filter>Resource Files\Source Files\Headers</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Enemy.h">

@@ -7,7 +7,7 @@ EnemyManager::EnemyManager(SDL_Renderer* ren,bool& gameStarted ,std::vector<Game
 
 EnemyManager::~EnemyManager()  
 {
-
+	SDL_DestroyRenderer(renderer);
 }
 
 void EnemyManager::Update() {

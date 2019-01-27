@@ -35,16 +35,23 @@ public:
 	int DirectionY;
 	Collision* collission;
 	Text* TitleTxt;
-	Text* ExtraText;
+	std::string titleText;
+	std::string startGameText;
+	std::string goalGameText;
+	std::string scoreText;
+	Text* GoalText;
 	Text* StartGameTxt;
 	Text* ScoreTxt;
+	Text* ControlsText;
 	int score;
 	int realScore;
 	int textTimer;
 	bool OnOffText;
 	Player * player;
-private:
 	bool GameStarted = false;
+	bool GameCheck = false;
+private:
+	int HighScore;
 	int cnt = 0;
 	bool isRunning = false;
 	SDL_Event event;

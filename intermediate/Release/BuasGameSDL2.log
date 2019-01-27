@@ -1,34 +1,105 @@
-﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(376,5): warning MSB8004: Intermediate Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Intermediate Directory.
-  Physics.cpp
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(372,5): warning MSB8004: Intermediate Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Intermediate Directory.
   Enemy.cpp
-d:\cppprojectsgit\buasgamesdl\buasgamesdl2\enemy.cpp(5): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-d:\cppprojectsgit\buasgamesdl\buasgamesdl2\enemy.cpp(6): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-d:\cppprojectsgit\buasgamesdl\buasgamesdl2\enemy.cpp(14): warning C4244: '-=': conversion from 'float' to 'int', possible loss of data
-d:\cppprojectsgit\buasgamesdl\buasgamesdl2\enemy.cpp(22): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-d:\cppprojectsgit\buasgamesdl\buasgamesdl2\enemy.cpp(23): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+Enemy.cpp(28): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+Enemy.cpp(29): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
   EnemyManager.cpp
   Game.cpp
-d:\cppprojectsgit\buasgamesdl\buasgamesdl2\game.cpp(14): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+Game.cpp(32): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
   GameObject.cpp
-d:\cppprojectsgit\buasgamesdl\buasgamesdl2\gameobject.cpp(26): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-d:\cppprojectsgit\buasgamesdl\buasgamesdl2\gameobject.cpp(27): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+GameObject.cpp(28): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+GameObject.cpp(29): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
   Input.cpp
   main.cpp
   Map.cpp
+  MapColliders.cpp
+  Physics.cpp
   Player.cpp
-d:\cppprojectsgit\buasgamesdl\buasgamesdl2\player.cpp(5): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-d:\cppprojectsgit\buasgamesdl\buasgamesdl2\player.cpp(7): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-d:\cppprojectsgit\buasgamesdl\buasgamesdl2\player.cpp(20): warning C4244: '+=': conversion from 'float' to 'int', possible loss of data
-d:\cppprojectsgit\buasgamesdl\buasgamesdl2\player.cpp(21): warning C4244: '+=': conversion from 'float' to 'int', possible loss of data
-d:\cppprojectsgit\buasgamesdl\buasgamesdl2\player.cpp(28): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-d:\cppprojectsgit\buasgamesdl\buasgamesdl2\player.cpp(29): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-d:\cppprojectsgit\buasgamesdl\buasgamesdl2\player.cpp(93): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-d:\cppprojectsgit\buasgamesdl\buasgamesdl2\player.cpp(109): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+Player.cpp(4): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+Player.cpp(5): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+Player.cpp(62): warning C4244: '+=': conversion from 'float' to 'int', possible loss of data
+Player.cpp(63): warning C4244: '+=': conversion from 'float' to 'int', possible loss of data
+Player.cpp(66): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+Player.cpp(67): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+Player.cpp(177): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+Player.cpp(192): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
   System.cpp
+  Text.cpp
   TextureManager.cpp
   Generating code
-  470 of 479 functions (98.1%) were compiled, the rest were copied from previous compilation.
-    1 functions were new in current compilation
-    0 functions had inline decision re-evaluated but remain unchanged
+  172 of 494 functions (34.8%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    12 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
-  BuasGameSDL2.vcxproj -> D:\cppProjectsGit\BuasGameSDL\Release\BuasGameSDL2.exe
+Game.obj : warning LNK4020: a type record in 'd:\cppgit\buasgamesdl\intermediate\release\vc141.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+GameObject.obj : warning LNK4020: a type record in 'd:\cppgit\buasgamesdl\intermediate\release\vc141.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+Input.obj : warning LNK4020: a type record in 'd:\cppgit\buasgamesdl\intermediate\release\vc141.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+main.obj : warning LNK4020: a type record in 'd:\cppgit\buasgamesdl\intermediate\release\vc141.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+Map.obj : warning LNK4020: a type record in 'd:\cppgit\buasgamesdl\intermediate\release\vc141.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+MapColliders.obj : warning LNK4020: a type record in 'd:\cppgit\buasgamesdl\intermediate\release\vc141.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+Physics.obj : warning LNK4020: a type record in 'd:\cppgit\buasgamesdl\intermediate\release\vc141.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+Player.obj : warning LNK4020: a type record in 'd:\cppgit\buasgamesdl\intermediate\release\vc141.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+System.obj : warning LNK4020: a type record in 'd:\cppgit\buasgamesdl\intermediate\release\vc141.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+Text.obj : warning LNK4020: a type record in 'd:\cppgit\buasgamesdl\intermediate\release\vc141.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+TextureManager.obj : warning LNK4020: a type record in 'd:\cppgit\buasgamesdl\intermediate\release\vc141.pdb' is corrupted; some symbols and types may not be accessible from the debugger
+  BuasGameSDL2.vcxproj -> D:\cppGit\BuasGameSDL\Release\BuasGameSDL2.exe
+  
+  -------------------------------------------------------------------------------
+     ROBOCOPY     ::     Robust File Copy for Windows                              
+  -------------------------------------------------------------------------------
+  
+    Started : Saturday, 26 January 2019 18:05:42
+     Source : D:\cppGit\BuasGameSDL\BuasGameSDL2\Assets\
+       Dest : D:\cppGit\BuasGameSDL\Release\Assets\
+  
+      Files : *.*
+  	    
+    Options : *.* /S /E /DCOPY:DA /COPY:DAT /R:1000000 /W:30 
+  
+  ------------------------------------------------------------------------------
+  
+  	                   9	D:\cppGit\BuasGameSDL\BuasGameSDL2\Assets\
+  	                  11	D:\cppGit\BuasGameSDL\BuasGameSDL2\Assets\IceToSnow\
+  	                  12	D:\cppGit\BuasGameSDL\BuasGameSDL2\Assets\IceToWater\
+  	                   3	D:\cppGit\BuasGameSDL\BuasGameSDL2\Assets\MainTiles\
+  	                   8	D:\cppGit\BuasGameSDL\BuasGameSDL2\Assets\SnowToIce\
+  
+  ------------------------------------------------------------------------------
+  
+                 Total    Copied   Skipped  Mismatch    FAILED    Extras
+      Dirs :         5         0         5         0         0         0
+     Files :        43         0        43         0         0         0
+     Bytes :   327.6 k         0   327.6 k         0         0         0
+     Times :   0:00:00   0:00:00                       0:00:00   0:00:00
+     Ended : Saturday, 26 January 2019 18:05:42
+  
+  
+  -------------------------------------------------------------------------------
+     ROBOCOPY     ::     Robust File Copy for Windows                              
+  -------------------------------------------------------------------------------
+  
+    Started : Saturday, 26 January 2019 18:05:42
+     Source : D:\cppGit\BuasGameSDL\BuasGameSDL2\dlls\
+       Dest : D:\cppGit\BuasGameSDL\Release\
+  
+      Files : *.*
+  	    
+    Options : *.* /S /E /DCOPY:DA /COPY:DAT /R:1000000 /W:30 
+  
+  ------------------------------------------------------------------------------
+  
+  	                   6	D:\cppGit\BuasGameSDL\BuasGameSDL2\dlls\
+  	*EXTRA Dir        -1	D:\cppGit\BuasGameSDL\Release\Assets\
+  	  *EXTRA File 		   52736	BuasGameSDL2.exe
+  	  *EXTRA File 		  862208	BuasGameSDL2.iobj
+  	  *EXTRA File 		  203360	BuasGameSDL2.ipdb
+  	  *EXTRA File 		   1.1 m	BuasGameSDL2.pdb
+  
+  ------------------------------------------------------------------------------
+  
+                 Total    Copied   Skipped  Mismatch    FAILED    Extras
+      Dirs :         1         0         1         0         0         1
+     Files :         6         0         6         0         0         4
+     Bytes :    1.96 m         0    1.96 m         0         0    2.22 m
+     Times :   0:00:00   0:00:00                       0:00:00   0:00:00
+     Ended : Saturday, 26 January 2019 18:05:42
+  

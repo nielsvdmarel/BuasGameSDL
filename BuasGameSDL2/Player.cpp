@@ -18,7 +18,7 @@ Player::Player(GameObject gameObject, Input & i) : GameObject(gameObject), input
 	animationTime = 0;
 	Animating = false;
 }
-//Destructor for Player GameObject
+
 Player::~Player() {
 
 }
@@ -155,10 +155,9 @@ void Player::onCollision(std::string otherTag, GameObject* other) {
 			endFrame = 15;
 			currentFrame = beginFrame;
 			Animating = true;
-			speedx = 2;
+			speedx = 3;
 			speedy = 0;
 			flip = SDL_FLIP_NONE;
-			Started = false;
 		}
 	}
 }
@@ -205,6 +204,28 @@ void Player::PlayerGameOver() {
 	animationTime = 0;
 	Animating = false;
 	alive = false;
+}
+
+void Player::RespawnPlayer() {
+	//Respawns player when walked off border, respawn
+	ypos = 500;
+	xpos = 1000;
+	AnimateFrame(1);
+	animationTime = 0;
+	Animating = false;
+	alive = true;
+	loop = false;
+	speedx = 0;
+	speedy = 0;
+}
+
+void Player::checkDeathState() {
+	if (Started) {
+		PlayerGameOver();
+		Started = false;
+	} else if (!Started) {
+		RespawnPlayer();
+	}
 }
 
 void Player::AnimateFrame(int anim) {
@@ -303,7 +324,7 @@ void Player::AnimateFrame(int anim) {
 		srcRect.x = 0;
 		srcRect.y = 0;
 		//Sets player to game over state, after death animation is at last frame
-		PlayerGameOver();
+		checkDeathState();
 		break;
 	default:
 		break;

@@ -1,16 +1,42 @@
-the penguin sprites:
-https://forums.rpgmakerweb.com/index.php?threads/whtdragons-animals-and-running-horses-now-with-more-dragons.53552/
+All assets and some explanation.
 
-red penguin sprites are modified versions of the origional.
+The penguin sprites:
+
+https://forums.rpgmakerweb.com/index.php?threads/whtdragons-animals-and-running-horses-now-with-more-dragons.53552/
+red penguin sprites are modified versions of the original.
 
 SDL tutorials I used: 
 SDL playlist from "Let's Make Games":
 https://www.youtube.com/playlist?list=PLhfAbcv9cehhkG7ZQK0nfIGJC_C-wSLrx
-I started out with this tutorial to get a understanding of SDL, after a couple of episodes and a lot of moddifications
-I felt conftarble enought to step away from the tutorial and create everything myself.
+
+I started out with this tutorial to get a understanding of SDL, 
+after a couple of episodes and a lot of modifications I felt comfortable enough with C++ and SDL to step away from the tutorial and create everything myself.
+
+I also used a lot of online research for C++, the most helpful website was the website from LazyFoo:
+http://lazyfoo.net/SDL_tutorials/
 
 SDL_TTF: https://www.youtube.com/watch?v=FIjj6UVXtXk&t=951s
-I used this text sdl tutorial to get more understandig on how to use the SDL_TTF library. 
+I used this text SDL tutorial to get more understanding on how to use the SDL_TTF library. 
 
-I used this sprite sheet from the origional pokemon mystery dungeon, downloaded on sprites-resource:
+I used this sprite sheet from the original Pokémon mystery dungeon, downloaded on sprites-resource:
 https://www.spriters-resource.com/fullview/85201/
+
+The ttf file I used is a Mario256 font I found online:
+https://www.dafont.com/super-mario-256.font
+
+
+The main idea of my game was a remake of the famous Mario party game: Pushy Penguins in 2d.
+https://www.youtube.com/watch?v=-23577p1dWw&t=2s
+
+I learned a lot from this BUAS intake assignment. There is a lot I’d like to improve or expand, But I wasn’t able to do this in time.
+-- Known bugs: 
+-Sometimes the player collides with two objects at the same time, and get’s sandwiched. As a result the player teleports out of both objects. 
+
+-- Known improvements to make: 
+-Add a restart without restarting the game itself.
+-Score isn’t saved. 
+
+Library’s used:
+SDL,
+SDL_TTF,
+SDL_image.

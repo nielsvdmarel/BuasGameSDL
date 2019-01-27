@@ -17,7 +17,7 @@ MapColliders::MapColliders(SDL_Renderer* ren, bool& gameStarted, std::vector<Gam
 }
 
 MapColliders::~MapColliders() {
-
+	SDL_DestroyRenderer(renderer);
 }
 
 //Reads and uses a file to fill in the collision map vector with collision map related data

@@ -25,7 +25,6 @@
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="mainBackup.cpp" />
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="MapColliders.cpp" />
     <ClCompile Include="Physics.cpp" />

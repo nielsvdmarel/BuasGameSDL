@@ -10,7 +10,6 @@ class GameObject {
 	public:
 		GameObject(const std::string & textureSheet, SDL_Renderer* ren, int x, int y, bool& gameStarted);
 		GameObject(SDL_Texture * textureSheet, SDL_Renderer* ren, int x, int y, bool& gameStarted);
-		~GameObject();
 		float scale = 2;
 	 	virtual void Update();
 		virtual void Render();
@@ -25,7 +24,5 @@ class GameObject {
 		bool& Started;
 	protected:
 		SDL_Texture* objTexture;
-		SDL_Texture* testTex;
-		SDL_Texture* originTex;
 		SDL_Renderer* renderer;
 };
