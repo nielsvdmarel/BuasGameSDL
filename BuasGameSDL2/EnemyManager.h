@@ -1,8 +1,9 @@
-#pragma once
+ #pragma once
 #include "Enemy.h"
 #include "System.h"
 #include "GameObject.h"
 #include "Player.h"
+#include <stack>
 
 class EnemyManager: public System {
 public:
@@ -13,7 +14,11 @@ public:
 	SDL_Renderer* renderer;
 	void AddGameObjectToObjects(GameObject * gameObject);
 	void AddGameObjectToEnemys(GameObject* gameObject);
+	void SpawnAllEnemys();
+	void RePlaceAllEnemys();
 private:
+	int totalEnemys = 110;
+	int xStartPos = 2000;
 	int RespawnXDistance;
 	int amountOfEnemys;
 	float timePassed;
@@ -24,4 +29,5 @@ private:
 	bool& started;
 	std::vector<GameObject*>& objects;
 	std::vector<GameObject*> enemys;
+	std::stack<Enemy*> enemiesStack;
 };

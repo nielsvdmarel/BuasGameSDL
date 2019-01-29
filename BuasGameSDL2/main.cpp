@@ -1,8 +1,7 @@
 #include "Game.h"
 #include "windows.h"
 
-int main(int argc, char* argv[])
-{
+int main(int argc, char* argv[]) {
 	char result[256];
 	int bytes = GetModuleFileName(NULL, result, 256);
 	std::cout << result << "\n";
@@ -17,8 +16,7 @@ int main(int argc, char* argv[])
 	Game* game = new Game();
 	//Starts the Game init
 	game->init("Pushy-Penguins", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 1920, 1080, false);
-	while (game->running())
-	{
+	while (game->running()) {
 		//Update
 		frameStart = SDL_GetTicks();
 		game->handleEvents();

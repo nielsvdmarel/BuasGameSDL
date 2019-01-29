@@ -10,8 +10,7 @@ Input::~Input()	{
 
 }
 
-void Input::setKeyDown(int keyCode)
-{
+void Input::setKeyDown(int keyCode) {
 	//Checks if key down is valid key
 	if (keyCode >= MAX_KEYS) {
 		std::cout << "error key too large";
@@ -20,8 +19,7 @@ void Input::setKeyDown(int keyCode)
 	keys[keyCode] = true;
 }
 
-void Input::setKeyUp(int keyCode)
-{
+void Input::setKeyUp(int keyCode) {
 	//Checks if key down is valid key
 	if (keyCode >= MAX_KEYS) {
 		std::cout << "error key too large";
@@ -30,8 +28,7 @@ void Input::setKeyUp(int keyCode)
 	keys[keyCode] = false;
 }
 
-bool Input::GetKeyDown(int keycode)
-{
+bool Input::GetKeyDown(int keycode) {
 	//Returns the pressed key
 	return keys[keycode];
 }

@@ -68,8 +68,8 @@ void Game::init(const char *title, int xpos, int ypos, int width, int height, bo
 	//Title text created
 	TitleTxt = new Text("Assets/SuperMario256.ttf", 120, "Pushy Penguins!", {144, 144, 144, 144 }, renderer);
 	//Instruction text created
-	startGameText = "Press space to start!";
-	StartGameTxt = new Text("Assets/SuperMario256.ttf", 60, startGameText, { 105, 105, 105, 255 }, renderer);
+	startGameText = "Move to start!";
+	StartGameTxt = new Text("Assets/SuperMario256.ttf", 70, startGameText, { 105, 105, 105, 255 }, renderer);
 	//Creates the text that explains the goal of the games
 	goalGameText = "Don't get pushed off the icy snow!";
 	GoalText = new Text("Assets/SuperMario256.ttf", 50, goalGameText, { 144, 144, 144, 144 }, renderer);
@@ -93,13 +93,14 @@ void Game::handleEvents() {
 
 void Game::update() {
 	//handles the collider updates on all Gameobjects with colliders
-	collission->update();
+	if (GameStarted) {
+		collission->update();
+	}
 	//updates all GameObjects
 	for (unsigned int i = 0; i < allGameObjects.size(); i++) {
 			allGameObjects[i]->Update();
 	}
 	if (GameStarted) {
-		enemyManager->Update();
 		score++;
 		scoreText = "Score: " + std::to_string(score /60);
 		ScoreTxt = new Text("Assets/SuperMario256.ttf", 70, scoreText, { 105, 105, 105, 255 }, renderer);
@@ -109,13 +110,13 @@ void Game::update() {
 		case SDL_KEYDOWN:
 			input.setKeyDown(event.key.keysym.scancode);
 			//std::cout << event.key.keysym.scancode << std::endl;
-			break;
+			break;	
 		case SDL_KEYUP:
 			input.setKeyUp(event.key.keysym.scancode);
 			break;
 		}
 		//Handles starting the game by pressing space
-		if (input.GetKeyDown(44)) {
+		if (input.GetKeyDown(22) || input.GetKeyDown(26) || input.GetKeyDown(4) || input.GetKeyDown(7)) {
 			if (!GameStarted) {
 				//enemyManager->ReGroupAllEnemysNewRound();
 				if (player->alive) {
@@ -169,7 +170,7 @@ void Game::render() {
 			textTimer = 0;
 		}
 		if (OnOffText) {
-			StartGameTxt->displayText(580, 900, renderer);
+			StartGameTxt->displayText(680, 900, renderer);
 		}
 	}
 	//updates the screen with rendering performed

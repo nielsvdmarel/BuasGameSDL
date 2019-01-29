@@ -6,7 +6,7 @@ class Enemy :public GameObject {
 public:
 	Enemy(GameObject gameObject);
 	~Enemy();
-	float scale;
+	int scale;
 	void Update() override;
 	void Render() override;
 	void onCollision(std::string otherTag, GameObject* other);

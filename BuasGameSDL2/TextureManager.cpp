@@ -11,8 +11,7 @@ SDL_Texture* TextureManager::LoadTexture(const std::string & texture, SDL_Render
 	
 }
 
-void TextureManager::Draw(SDL_Texture * tex, SDL_Rect src, SDL_Rect dest, SDL_Renderer* ren)
-{
+void TextureManager::Draw(SDL_Texture * tex, SDL_Rect src, SDL_Rect dest, SDL_Renderer* ren) {
 	if (tex != NULL) {
 		SDL_RenderCopy(ren, tex, &src, &dest);
 	}

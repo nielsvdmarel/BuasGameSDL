@@ -1,22 +1,18 @@
-﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(372,5): warning MSB8004: Intermediate Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Intermediate Directory.
-  Player.cpp
-d:\cppgit\buasgamesdl\buasgamesdl2\player.cpp(4): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-d:\cppgit\buasgamesdl\buasgamesdl2\player.cpp(5): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-d:\cppgit\buasgamesdl\buasgamesdl2\player.cpp(62): warning C4244: '+=': conversion from 'float' to 'int', possible loss of data
-d:\cppgit\buasgamesdl\buasgamesdl2\player.cpp(63): warning C4244: '+=': conversion from 'float' to 'int', possible loss of data
-d:\cppgit\buasgamesdl\buasgamesdl2\player.cpp(66): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-d:\cppgit\buasgamesdl\buasgamesdl2\player.cpp(67): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-d:\cppgit\buasgamesdl\buasgamesdl2\player.cpp(177): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-d:\cppgit\buasgamesdl\buasgamesdl2\player.cpp(192): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-  BuasGameSDL2.vcxproj -> D:\cppGit\BuasGameSDL\Debug\BuasGameSDL2.exe
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(376,5): warning MSB8004: Intermediate Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Intermediate Directory.
+  EnemyManager.cpp
+d:\cppprojectsgit\buasgamesdl\buasgamesdl2\enemymanager.cpp(46): warning C4018: '<': signed/unsigned mismatch
+  Game.cpp
+d:\cppprojectsgit\buasgamesdl\buasgamesdl2\game.cpp(32): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Generating Code...
+  BuasGameSDL2.vcxproj -> D:\cppProjectsGit\BuasGameSDL\Debug\BuasGameSDL2.exe
   
   -------------------------------------------------------------------------------
      ROBOCOPY     ::     Robust File Copy for Windows                              
   -------------------------------------------------------------------------------
   
-    Started : Saturday, 26 January 2019 19:00:32
-     Source : D:\cppGit\BuasGameSDL\BuasGameSDL2\Assets\
-       Dest : D:\cppGit\BuasGameSDL\Debug\Assets\
+    Started : Tuesday, January 29, 2019 5:18:22 PM
+     Source : D:\cppProjectsGit\BuasGameSDL\BuasGameSDL2\Assets\
+       Dest : D:\cppProjectsGit\BuasGameSDL\Debug\Assets\
   
       Files : *.*
   	    
@@ -24,11 +20,11 @@ d:\cppgit\buasgamesdl\buasgamesdl2\player.cpp(192): warning C4244: '=': conversi
   
   ------------------------------------------------------------------------------
   
-  	                   9	D:\cppGit\BuasGameSDL\BuasGameSDL2\Assets\
-  	                  11	D:\cppGit\BuasGameSDL\BuasGameSDL2\Assets\IceToSnow\
-  	                  12	D:\cppGit\BuasGameSDL\BuasGameSDL2\Assets\IceToWater\
-  	                   3	D:\cppGit\BuasGameSDL\BuasGameSDL2\Assets\MainTiles\
-  	                   8	D:\cppGit\BuasGameSDL\BuasGameSDL2\Assets\SnowToIce\
+  	                   9	D:\cppProjectsGit\BuasGameSDL\BuasGameSDL2\Assets\
+  	                  11	D:\cppProjectsGit\BuasGameSDL\BuasGameSDL2\Assets\IceToSnow\
+  	                  12	D:\cppProjectsGit\BuasGameSDL\BuasGameSDL2\Assets\IceToWater\
+  	                   3	D:\cppProjectsGit\BuasGameSDL\BuasGameSDL2\Assets\MainTiles\
+  	                   8	D:\cppProjectsGit\BuasGameSDL\BuasGameSDL2\Assets\SnowToIce\
   
   ------------------------------------------------------------------------------
   
@@ -37,16 +33,16 @@ d:\cppgit\buasgamesdl\buasgamesdl2\player.cpp(192): warning C4244: '=': conversi
      Files :        43         0        43         0         0         0
      Bytes :   327.6 k         0   327.6 k         0         0         0
      Times :   0:00:00   0:00:00                       0:00:00   0:00:00
-     Ended : Saturday, 26 January 2019 19:00:32
+     Ended : Tuesday, January 29, 2019 5:18:22 PM
   
   
   -------------------------------------------------------------------------------
      ROBOCOPY     ::     Robust File Copy for Windows                              
   -------------------------------------------------------------------------------
   
-    Started : Saturday, 26 January 2019 19:00:32
-     Source : D:\cppGit\BuasGameSDL\BuasGameSDL2\dlls\
-       Dest : D:\cppGit\BuasGameSDL\Debug\
+    Started : Tuesday, January 29, 2019 5:18:22 PM
+     Source : D:\cppProjectsGit\BuasGameSDL\BuasGameSDL2\dlls\
+       Dest : D:\cppProjectsGit\BuasGameSDL\Debug\
   
       Files : *.*
   	    
@@ -54,18 +50,18 @@ d:\cppgit\buasgamesdl\buasgamesdl2\player.cpp(192): warning C4244: '=': conversi
   
   ------------------------------------------------------------------------------
   
-  	                   6	D:\cppGit\BuasGameSDL\BuasGameSDL2\dlls\
-  	*EXTRA Dir        -1	D:\cppGit\BuasGameSDL\Debug\Assets\
-  	  *EXTRA File 		  211968	BuasGameSDL2.exe
-  	  *EXTRA File 		   1.0 m	BuasGameSDL2.ilk
-  	  *EXTRA File 		   1.5 m	BuasGameSDL2.pdb
+  	                   6	D:\cppProjectsGit\BuasGameSDL\BuasGameSDL2\dlls\
+  	*EXTRA Dir        -1	D:\cppProjectsGit\BuasGameSDL\Debug\Assets\
+  	  *EXTRA File 		  273920	BuasGameSDL2.exe
+  	  *EXTRA File 		   2.9 m	BuasGameSDL2.ilk
+  	  *EXTRA File 		   2.1 m	BuasGameSDL2.pdb
   
   ------------------------------------------------------------------------------
   
                  Total    Copied   Skipped  Mismatch    FAILED    Extras
       Dirs :         1         0         1         0         0         1
      Files :         6         0         6         0         0         3
-     Bytes :    1.96 m         0    1.96 m         0         0    2.75 m
+     Bytes :    1.96 m         0    1.96 m         0         0    5.44 m
      Times :   0:00:00   0:00:00                       0:00:00   0:00:00
-     Ended : Saturday, 26 January 2019 19:00:32
+     Ended : Tuesday, January 29, 2019 5:18:22 PM
   

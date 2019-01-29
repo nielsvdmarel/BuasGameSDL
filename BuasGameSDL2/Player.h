@@ -8,7 +8,7 @@ public:
 	Player(GameObject gameObject, Input & i);
 	~Player();
 	Input & input;
-	float scale = 2;
+	int scale = 2;
 	void Update();
 	void Render();
 	void onCollision(std::string otherTag, GameObject* other);
@@ -22,8 +22,8 @@ public:
 	int DirectionX;
 	float speedx;
 	float speedy;
-	float checkposx;
-	float checkposy; 
+	int checkposx;
+	int checkposy; 
 	void AnimateFrame(int anim);
 	int currentFrame;
 	int animationTime;

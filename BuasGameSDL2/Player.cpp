@@ -59,8 +59,14 @@ void Player::Update() {
 	checkDirectionx();
 	checkDirectiony();
 	//Adds calculated speed to the player
-	xpos += speedx * ((input.GetKeyDown(4)) ? -1 : (input.GetKeyDown(7)) ? 1 : DirectionX);
-	ypos += speedy * ((input.GetKeyDown(22)) ? 1 : (input.GetKeyDown(26)) ? -1 : DirectionY);
+	if (alive) {
+		xpos += speedx * ((input.GetKeyDown(4)) ? -1 : (input.GetKeyDown(7)) ? 1 : DirectionX);
+		ypos += speedy * ((input.GetKeyDown(22)) ? 1 : (input.GetKeyDown(26)) ? -1 : DirectionY);
+	}
+	if (!alive) {
+		//Fix for pusing the player always to the left when game over/ jumping in water
+		xpos += speedx * -1;
+	}
 	destRect.x = xpos;
 	destRect.y = ypos;
 	destRect.w = srcRect.w * scale;
