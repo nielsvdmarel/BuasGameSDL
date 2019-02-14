@@ -20,27 +20,29 @@ Enemy::~Enemy() {
 }
 
 void Enemy::Update() {
-	// makes enemy always move with it's speed variable
-	xpos += 1 * speed;
-	destRect.x = xpos;
-	destRect.y = ypos;
-	// width and height variables, used for collision
-	destRect.w = (srcRect.w * scale);
-	destRect.h = (srcRect.h * scale);
-	//Enemy always animates
-	Animate(beginFrame,endFrame);
+	if (Started) {
+		// makes enemy always move with it's speed variable
+		xpos += 1 * speed;
+		destRect.x = xpos;
+		destRect.y = ypos;
+		// width and height variables, used for collision
+		destRect.w = (srcRect.w * scale);
+		destRect.h = (srcRect.h * scale);
+		//Enemy always animates
+		Animate(beginFrame, endFrame);
 
-	//Frame timer for speed transition
-	randomSpeedTime++;
-	if (randomSpeedTime >= randomSpeedInterval) {
-		if (speed == -3) {
-			speed = -5;
+		//Frame timer for speed transition
+		randomSpeedTime++;
+		if (randomSpeedTime >= randomSpeedInterval) {
+			if (speed == -3) {
+				speed = -5;
+			}
+			else if (speed == -5) {
+				speed = -3;
+			}
+			randomSpeedTime = 0;
+			randomSpeedInterval = rand() % (randomSpeedMax - randomSpeedMin) + randomSpeedMin;
 		}
-		else if (speed == -5) {
-			speed = -3;
-		}
-		randomSpeedTime = 0;
-		randomSpeedInterval = rand() % (randomSpeedMax - randomSpeedMin) + randomSpeedMin;
 	}
 }
 
@@ -70,13 +72,17 @@ void Enemy::ResetEnemy() {
 	//Enemy xpos position reset
 	xpos = 2000;
 	//Animation reset
+	ResetAnimationState();
+	//New random y pos
+	int randomy = rand() % 10;
+	SetEnemyPosScale(randomy);
+}
+
+void Enemy::ResetAnimationState() {
 	loop = true;
 	beginFrame = 1;
 	endFrame = 3;
 	walking = true;
-	//New random y pos
-	int randomy = rand() % 10;
-	SetEnemyPosScale(randomy);
 }
 
 void Enemy::Render() {
@@ -164,6 +170,7 @@ void Enemy::SetEnemyPosScale(int beginYPos)
 		//Sets ypos calculation with scale.
 		ypos = 25 + (beginYPos * 90);
 	}
+	ResetAnimationState();
 }
 
 void Enemy::AnimateFrame(int anim)

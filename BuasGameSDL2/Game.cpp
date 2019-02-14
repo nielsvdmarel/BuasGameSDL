@@ -93,13 +93,14 @@ void Game::handleEvents() {
 
 void Game::update() {
 	//handles the collider updates on all Gameobjects with colliders
-	if (GameStarted) {
 		collission->update();
-	}
+	
 	//updates all GameObjects
+	
 	for (unsigned int i = 0; i < allGameObjects.size(); i++) {
-			allGameObjects[i]->Update();
+		allGameObjects[i]->Update();
 	}
+
 	if (GameStarted) {
 		score++;
 		scoreText = "Score: " + std::to_string(score /60);
@@ -118,11 +119,17 @@ void Game::update() {
 		//Handles starting the game by pressing space
 		if (input.GetKeyDown(22) || input.GetKeyDown(26) || input.GetKeyDown(4) || input.GetKeyDown(7)) {
 			if (!GameStarted) {
-				//enemyManager->ReGroupAllEnemysNewRound();
+				enemyManager->RePlaceAllEnemys();
 				if (player->alive) {
+					//First time start variable changes needed.
 					GameStarted = true;
 					GameCheck = true;
-			}
+					GameCheck = true;
+				}
+				if (!player->alive) {
+					//Restart whole game logic.
+					ResetGame();
+				}
 		}
 	}
 	//Handles quiting the game
@@ -130,12 +137,16 @@ void Game::update() {
 		event.type = SDL_QUIT;
 	}
 
+	if (input.GetKeyDown(21)) {
+		enemyManager->RePlaceAllEnemys();
+	}
+
 	if (GameCheck) {
 		if (!GameStarted) {
 			ControlsText = new Text("Assets/SuperMario256.ttf", 55, "Game over!", { 105, 105, 105, 255 }, renderer);
 			goalGameText = "You got pushed off!";
 			GoalText = new Text("Assets/SuperMario256.ttf", 50, goalGameText, { 144, 144, 144, 144 }, renderer);
-			startGameText = "Restart the game to retry!";
+			startGameText = "Move to start over!";
 			StartGameTxt = new Text("Assets/SuperMario256.ttf", 60, startGameText, { 105, 105, 105, 255 }, renderer);
 			GameCheck = false;
 		}
@@ -182,6 +193,15 @@ void Game::clean() {
 	SDL_DestroyRenderer(renderer);
 	//SDL_Quit();
 	std::cout << "Game Cleared" << std::endl;
+}
+
+void Game::ResetGame()
+{
+	GameStarted = true;
+	GameCheck = true;
+	player->alive = true;
+	player->RespawnPlayer();
+	score = 0;
 }
 
 

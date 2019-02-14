@@ -13,7 +13,7 @@ public:
 	bool EnemysSpawning;
 	SDL_Renderer* renderer;
 	void AddGameObjectToObjects(GameObject * gameObject);
-	void AddGameObjectToEnemys(GameObject* gameObject);
+	void AddAllEnemysToStack();
 	void SpawnAllEnemys();
 	void RePlaceAllEnemys();
 private:
@@ -28,6 +28,6 @@ private:
 	int minAmountWaveEnemys;
 	bool& started;
 	std::vector<GameObject*>& objects;
-	std::vector<GameObject*> enemys;
+	std::vector<Enemy*> allEnemies;
 	std::stack<Enemy*> enemiesStack;
 };

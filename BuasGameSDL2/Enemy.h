@@ -14,6 +14,7 @@ public:
 	void AnimateFrame(int Anim);
 	void Animate(int beginFrame, int endFrame);
 	void ResetEnemy();
+	void ResetAnimationState();
 	int speed = 4;
 	int animationTime;
 	int animationInterval = 10;

@@ -26,6 +26,7 @@ public:
 	void update();
 	void render();
 	void clean();
+	void ResetGame();
 	Input input;
 	EnemyManager* enemyManager;
 	bool running() { return isRunning; }
