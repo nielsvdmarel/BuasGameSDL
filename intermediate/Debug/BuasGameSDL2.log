@@ -1,12 +1,15 @@
-﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(372,5): warning MSB8004: Intermediate Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Intermediate Directory.
-  Enemy.cpp
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(437,5): warning MSB8004: Intermediate Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Intermediate Directory.
+  Game.cpp
+  main.cpp
+  Generating Code...
+D:\cppGit\BuasGameSDL\BuasGameSDL2\Game.cpp(32,12): warning C4244:  'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
   BuasGameSDL2.vcxproj -> D:\cppGit\BuasGameSDL\Debug\BuasGameSDL2.exe
   
   -------------------------------------------------------------------------------
      ROBOCOPY     ::     Robust File Copy for Windows                              
   -------------------------------------------------------------------------------
   
-    Started : Thursday, 14 February 2019 15:49:52
+    Started : Wednesday, 4 September 2019 00:03:05
      Source : D:\cppGit\BuasGameSDL\BuasGameSDL2\Assets\
        Dest : D:\cppGit\BuasGameSDL\Debug\Assets\
   
@@ -29,14 +32,14 @@
      Files :        43         0        43         0         0         0
      Bytes :   327.6 k         0   327.6 k         0         0         0
      Times :   0:00:00   0:00:00                       0:00:00   0:00:00
-     Ended : Thursday, 14 February 2019 15:49:52
+     Ended : Wednesday, 4 September 2019 00:03:05
   
   
   -------------------------------------------------------------------------------
      ROBOCOPY     ::     Robust File Copy for Windows                              
   -------------------------------------------------------------------------------
   
-    Started : Thursday, 14 February 2019 15:49:52
+    Started : Wednesday, 4 September 2019 00:03:05
      Source : D:\cppGit\BuasGameSDL\BuasGameSDL2\dlls\
        Dest : D:\cppGit\BuasGameSDL\Debug\
   
@@ -48,16 +51,16 @@
   
   	                   6	D:\cppGit\BuasGameSDL\BuasGameSDL2\dlls\
   	*EXTRA Dir        -1	D:\cppGit\BuasGameSDL\Debug\Assets\
-  	  *EXTRA File 		  236544	BuasGameSDL2.exe
-  	  *EXTRA File 		   2.9 m	BuasGameSDL2.ilk
-  	  *EXTRA File 		   2.5 m	BuasGameSDL2.pdb
+  	  *EXTRA File 		  242688	BuasGameSDL2.exe
+  	  *EXTRA File 		   1.2 m	BuasGameSDL2.ilk
+  	  *EXTRA File 		   1.5 m	BuasGameSDL2.pdb
   
   ------------------------------------------------------------------------------
   
                  Total    Copied   Skipped  Mismatch    FAILED    Extras
       Dirs :         1         0         1         0         0         1
      Files :         6         0         6         0         0         3
-     Bytes :    1.96 m         0    1.96 m         0         0    5.66 m
+     Bytes :    1.96 m         0    1.96 m         0         0    3.02 m
      Times :   0:00:00   0:00:00                       0:00:00   0:00:00
-     Ended : Thursday, 14 February 2019 15:49:52
+     Ended : Wednesday, 4 September 2019 00:03:05
   
